@@ -20,7 +20,19 @@ public class Orden {
     //Metodo para agregar una nueva computadora al arreglo
     public void agregarComputadora(Computadora computadora){
         if(this.contadorComputadoras < Orden.MAX_COMPUTADORAS){
-            this.computadora[this.contadorComputadoras++] = computadora;
+            this.computadora[this.contadorComputadoras++] = computadora; 
+        }
+        else{
+            System.out.println("Has superado el limite: "+Orden.MAX_COMPUTADORAS);
+        }
+    }
+    
+    //Mostrar orden
+    public void mostrarOrden(){
+        System.out.println("Orden #: "+this.idOrden);
+        System.out.println("Computadoras de la orden  #: "+this.idOrden);
+        for(int i = 0; i < this.contadorComputadoras; i++){
+            System.out.println(this.computadora[i]);
         }
     }
     
