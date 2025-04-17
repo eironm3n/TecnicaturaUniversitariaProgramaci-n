@@ -20,7 +20,7 @@ public class Orden {
     //Metodo para agregar una nueva computadora al arreglo
     public void agregarComputadora(Computadora computadora){
         if(this.contadorComputadoras < Orden.MAX_COMPUTADORAS){
-            this.computadora[this.contadorComputadoras++] = computadora
+            this.computadora[this.contadorComputadoras++] = computadora;
         }
     }
     
