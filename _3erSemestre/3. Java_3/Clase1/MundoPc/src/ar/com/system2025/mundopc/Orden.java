@@ -11,6 +11,17 @@ public class Orden {
     private static final int MAX_COMPUTADORAS = 10;
     private int contadorComputadoras;
     
+    // Constructor vacio
+    public Orden(){
+        this.idOrden = ++Orden.contadorOrdenes;
+        this.computadora = new Computadora[Orden.MAX_COMPUTADORAS];
+    }
     
+    //Metodo para agregar una nueva computadora al arreglo
+    public void agregarComputadora(Computadora computadora){
+        if(this.contadorComputadoras < Orden.MAX_COMPUTADORAS){
+            this.computadora[this.contadorComputadoras++] = computadora
+        }
+    }
     
 }
