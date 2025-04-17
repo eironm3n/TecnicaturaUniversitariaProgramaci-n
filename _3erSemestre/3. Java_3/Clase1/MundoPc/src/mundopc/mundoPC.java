@@ -20,9 +20,14 @@ public class mundoPC {
         Raton ratonGamer = new Raton("Bluetooth","Gamer");
         Computadora computadoraGamer = new Computadora("Computadora Gamer", monitorGamer, tecladoGamer, ratonGamer);
         Orden orden1 = new Orden(); //Inicializamos el arreglo vacio
+        Orden orden2 = new Orden(); //Una nueva lista para el objeto orden2
         orden1.agregarComputadora(computadoraHP);
         orden1.agregarComputadora(computadoraGamer);
         orden1.mostrarOrden();
+        
+        Computadora computadorasVarias = new Computadora("Computadora de diferentes marcas", monitorHP, tecladoGamer, ratonHP);
+        orden2.agregarComputadora(computadorasVarias);
+        orden2.mostrarOrden();
     }
     
     
