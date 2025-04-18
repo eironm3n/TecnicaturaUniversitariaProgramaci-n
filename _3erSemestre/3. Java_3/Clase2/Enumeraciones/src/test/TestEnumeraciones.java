@@ -1,5 +1,5 @@
 /*
-
+ Aqui testeamos enumeraciones.Dias
 */
 package test;
 
