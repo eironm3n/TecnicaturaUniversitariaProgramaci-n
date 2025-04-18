@@ -1,14 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Manejo de Enumeraciones (enum)
  */
 package enumeraciones;
 
-/**
- *
- * @author Arón
- */
-public class Dias {
-    
+//se cambia 'class' por 'enum'
+public enum Dias {
+    LUNES,
+    MARTES,
+    MIERCOLES,
+    JUEVES,
+    VIERNES,
+    SABADO,
+    DOMINGO
 }
