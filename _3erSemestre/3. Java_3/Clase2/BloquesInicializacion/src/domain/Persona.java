@@ -17,5 +17,20 @@ public class Persona {
         //idPersona = 10; --> Esto genera un error, ya que no es un atributo estatico
     }
     
+    { //creamos bloque de inicialización NoEstatico o ContextoDinámico
+        System.out.println("Ejecución del bloque NO estático");
+        this.idPersona = Persona.contadorPersonas++; //Incrementamos el atributo
+    }
+    
+    //Los bloques de incialización se ejecutan antes del constructor.
+    public Persona(){
+        System.out.println("Ejecución del constructor");
+    }
+
+    public int getIdPersona() {
+        return this.idPersona;
+    }
+    
+    
     
 }
