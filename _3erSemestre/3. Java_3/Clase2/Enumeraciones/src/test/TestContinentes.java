@@ -26,12 +26,14 @@ public class TestContinentes {
                 +Continentes.EUROPA.getPaises());
         System.out.println("No. de habitantes en el 2do Continente: "
                 +Continentes.EUROPA.getHabitantes());
-        System.out.println("Continente No.1: "+Continentes.ASIA);
+        
+        System.out.println("Continente No.3: "+Continentes.ASIA);
         System.out.println("No. de paises en el 3er Continente: "
                 +Continentes.ASIA.getPaises());
         System.out.println("No. de habitantes en el 3er Continente: "
                 +Continentes.ASIA.getHabitantes());
-        System.out.println("Continente No.1: "+Continentes.OCEANIA);
+        
+        System.out.println("Continente No.5: "+Continentes.OCEANIA);
         System.out.println("No. de paises en el 5to Continente: "
                 +Continentes.OCEANIA.getPaises());
         System.out.println("No. de habitantes en el 5to Continente: "
