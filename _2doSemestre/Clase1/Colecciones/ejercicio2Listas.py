@@ -5,7 +5,7 @@ Crear un rango de numeros de 2 a 6 e imprimelos
 Ejemplo: 2,3,4,5,6
 """
 
-numeros = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print('Los numeros son:')
 
 for numero in numeros:

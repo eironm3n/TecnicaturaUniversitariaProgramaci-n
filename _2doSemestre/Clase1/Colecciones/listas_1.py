@@ -1,4 +1,5 @@
-#Las listas son un conjunto de elementos
+# Las listas son un conjunto de elementos
+# Se almacenan dentro de corchetes
 
 nombres = ['Naty', 'Osvaldo','Lily', 'Ariel']
 print(nombres)  #Esto muestra la lista completa
