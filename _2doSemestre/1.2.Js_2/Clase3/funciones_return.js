@@ -9,5 +9,7 @@ function miFuncion(a,b){
     return a + b;
 }
 
+// Definimos la variable y dentro ingresamos la funcion y le damos valores
 let resultado = miFuncion(6,7);
-console.log
+console.log(resultado); // esto mostrara 13 ya que toma la logica que ocurre en miFuncion
+
