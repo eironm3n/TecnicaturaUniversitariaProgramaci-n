@@ -1,6 +1,4 @@
-
 //Tipos primitivos
-
 // Paso por Referencia
 
 const persona = {
