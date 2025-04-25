@@ -61,7 +61,7 @@ toString()
 --
 Responsibilities
 -- crear objetos de tipo Teclado</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>360</y><w>30</w><h>170</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;150</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>420</y><w>190</w><h>40</h></coordinates><panel_attributes>lt=.
-&lt;&lt;Agregar&gt;&gt;</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>430</y><w>90</w><h>400</h></coordinates><panel_attributes>lt=.
+&lt;&lt;Agregar&gt;&gt;</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>430</y><w>80</w><h>400</h></coordinates><panel_attributes>lt=.
 &lt;&lt;Agregar&gt;&gt;</panel_attributes><additional_attributes>10;10;10;380</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>790</y><w>540</w><h>40</h></coordinates><panel_attributes>lt=.
 </panel_attributes><additional_attributes>10;20;520;20</additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>750</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=.
 </panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>960</x><y>750</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=.
