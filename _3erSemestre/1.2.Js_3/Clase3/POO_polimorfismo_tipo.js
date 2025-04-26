@@ -28,10 +28,10 @@ class Gerente extends Empleado{
 
 }
 
-//
+// tipo sirve para obtener información sin importar el contenido
 function imprimir( tipo ){
     console.log( tipo.obtenerDetalles() );
-}
+}   // segun el tipo que le pasemos, sera la información que obtendremos
 
 // Objeto de la clase hija
 let gerente1 = new Gerente("Carlos",5000,"Sistemas");
