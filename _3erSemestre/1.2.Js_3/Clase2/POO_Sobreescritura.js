@@ -31,10 +31,16 @@ class Gerente extends Empleado{
 
 }
 
-// Objeto de la clase padre
+// Objeto de la clase hija
 let gerente1 = new Gerente("Carlos",5000,"Sistemas");
 console.log(gerente1);
 
-// Objeto de la clase hija
+// Objeto de la clase padre
 let empleado1 = new Empleado("Juan", 3000);
 console.log(empleado1);
+
+
+/*
+En conclusión, obtiene de la clase padre(Empleado), las mismas caracteristicas
+pero las sobreeescribe dentro de la clase hija
+ */
