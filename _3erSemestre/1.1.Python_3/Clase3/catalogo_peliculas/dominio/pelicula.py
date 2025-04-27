@@ -11,6 +11,7 @@ class pelicula:
     def nombre(self):
         return self._nombre
     
+    # metodo set
     @nombre.setter
     def nombre(self,nombre):
         self._nombre = nombre
