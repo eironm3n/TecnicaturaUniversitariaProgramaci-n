@@ -1,0 +1,27 @@
+Durante la ejercitación se utilizaron los comandos:
+1> Se crea la base primeraclase, luego se adicionan los siguientes comandos de insertOne e insertMany.
+
+2> Para insertar uno:
+db.insertar.insertOne({"nombre":"Mocox","edad":30})
+
+3> Para insertar varios documentos a la vez:
+db.insertar.insertMany([{"nombre":"Tito", "edad":28}, {"nombre":"Berta", "edad":25}])
+
+Se crea la imagen "1eraActividad_insertOne_insertMany.png", para realizar las practicas.
+
+--> Tambien se realizo coneccion con Studio3T para visualizar la base de datos actual, y se crea la base de datos "Estudiantes"
+1> Abrimos Studio3T, y damos a la opción "Connect"
+2> Elegimos "New connection"
+3> Optamos por la opción "Manually configure my conection settings", y damos en "next"
+4> En connection name: colocamos 'db' en este caso usamos ese nombre gracias al video tutorial. El puerto te lo asigna la misma aplicacion en el numero 27017
+
+5> Damos en "save" y luego elegimos la base creada y damos en "connect"
+6> Deberia figurarnos las bases del sistema y las anteriormente hechas de forma local en el servicio de mongod
+
+7> Damos a click derecho en nuestra base localhost, y elegimos 'Add database', como nombre colocamos "Tenicatura"
+8> Dentro de "Ejercicio" elegimos el directorio 'Coleccion' y agregamos una nueva colecció. Como nombre colocamos 'Alumno'
+9> Se agrega nueva base de datos llamada "Estudiante" según actividad
+
+==================================
+
+Se adjuntan imagenes.
