@@ -1,0 +1,27 @@
+Durante la ejercitación se utilizaron los comandos:
+1> show dbs= esto muestra las bases de datos activas
+2> use Ejercicio= Esto me mueve a la base de datos existente
+3> db.insertar.insert({"nombre":"Aron","edad":30})= para instertar esta información con el metodo insert
+4> db.insert.find() = esto no arroja nada, ya que se uso "insertar"
+5> db.insertar.find() = esto si arrojo el resultado de lo insertado previamente
+
+PLUS: en caso de no encontrar un output al utilizar el comando "db.insertar.find()", revisar si estamos posicionados en la base correcta, podemos usar=
+* use Ejercicio
+* db
+* db.getCollectionNames()
+* db.insertar.find()
+
+BUENAS PRACTICAS
+Tener en cuenta que el comando: db.insertar.insert({"nombre":"Aron","edad":30})
+
+Ya esta 'deprecated' u obsoleto, preferir utilizar los siguientes formas:
+
+* Para insertar uno:
+db.insertar.insertOne({"nombre":"Aron","edad":30})
+
+
+* O si quieres insertar varios documentos a la vez:
+db.insertar.insertMany([
+  {"nombre":"Aron", "edad":30},
+  {"nombre":"Berta", "edad":25}
+])
