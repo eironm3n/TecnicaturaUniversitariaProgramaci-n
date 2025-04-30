@@ -1,0 +1,24 @@
+
+1> Para seleccionar TODO, de la tabla persona
+SELECT * FROM public.persona
+
+2> De esta forma reutilizamos la consulta anterior, y la ajustamos para que nos ordenen los items por ID y de forma asecendente
+SELECT * FROM public.persona
+order by id_persona asc
+
+3> Para seleccionar TODO, de la tabla persona
+SELECT * FROM persona
+
+4> Para limitar la cantidad de filtro de la consulta a realizar, y que muestre el 1
+SELECT * FROM persona WHERE id_persona = 1
+
+5> Para realizar lo mismo, pero muestre los elementos de los lugares 1 y 2
+SELECT * FROM persona WHERE id_persona in (1,2)
+
+6> Para comentar una sentencia o que no se lea, se usa doble guión (--)
+--SELECT * FROM persona WHERE id_persona in (1,2,3)
+Aca no deberia mostrar nada
+
+7> Para insertar esta información como nueva en la tabla, luego de la que ya existe
+INSERT INTO persona(nombre,apellido,email)VALUES('Susana','Lara','slara@mail.com')
+
