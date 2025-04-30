@@ -22,3 +22,16 @@ Aca no deberia mostrar nada
 7> Para insertar esta información como nueva en la tabla, luego de la que ya existe
 INSERT INTO persona(nombre,apellido,email)VALUES('Susana','Lara','slara@mail.com')
 
+8> UPDATE modifica el registro y SET 
+UPDATE persona SET nombre = 'Ivonne',apellido = 'Frijol', email = 'ifrijol@mail.com'
+Al utilizar esta consulta, insertariamos esta información en TODOS los registros, por lo que todos tendran el mismo nombre
+
+9> Para ejecutar la consulta correctamente, utilizamos un filtro.
+UPDATE persona SET nombre = 'Ivonne',apellido = 'Frijol', email = 'ifrijol@mail.com' WHERE id_persona=3
+En este paso, reemplazariamos el nombre agregado en el lugar 3, en el paso 7
+
+10> Para eliminar TODO
+DELETE FROM persona
+
+11> Para filtrar con cual fila eliminaremos, en este caso apuntamos al indice 3
+DELETE FROM persona WHERE id_persona=3
