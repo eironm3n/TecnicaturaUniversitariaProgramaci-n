@@ -20,3 +20,6 @@ conexion = psycopg2.connect(
 
 print(conexion)
 # esto nos muestra una correcta ejecución del conector a la base de datos ya creada
+"""
+esto es una prueba para github desktop
+"""
