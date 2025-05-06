@@ -23,3 +23,5 @@ conexion = psycopg2.connect(
 cursor = conexion.cursor()
 sentencia = 'SELECT * FROM persona'
 cursor.execute(sentencia)
+
+# Si al ejecutar este codigo arroja error, revisar si existe conflicto con la version de Python
