@@ -1,6 +1,8 @@
 """
 utilización de librerias psycopg2, perteneciente a Postgresql 
-Instalar en venv con = pip install psycopg2
+Instalar en venv = 
+pip install psycopg2
+pip install mysql-connector
 """
 
 import psycopg2
@@ -8,7 +10,7 @@ import psycopg2
 
 #conexion = psycopg2.connect()
 conexion = psycopg2.connect(
-    user= 'admin',
+    user='postgres',
     password= 'admin',
     host='127.0.0.1',
     port='5432',
@@ -17,8 +19,4 @@ conexion = psycopg2.connect(
 # con este metodo podemos conectarnos a la base de datos
 
 print(conexion)
-
-# ESTE CODIGO NO FUNCIONA POR INCONVENIENTES CON EL NOMBRE DE USUARIO DE ORIGEN
-# ERROR RELACIONADO CON UTF8 YA QUE EL USUARIO TIENE ACENTO EN SU NOMBRE, NO COMPATIBLE CON psycopg2
-# INVESTIGAR PARA SOLVENTAR Y PROBAR QUE FUNCIONE
-# continuar con video "Clase 4 Parte 6 python"
+# esto nos muestra una correcta ejecución del conector a la base de datos ya creada
