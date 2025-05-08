@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piedra, papel y tijera</title>
     <script>
-        //1 sera piedra, 2 sera papel y 3 sera tijera
+        /*Opciones:
+        1 sera piedra, 
+        2 sera papel y 
+        3 sera tijera*/
+        
         let jugador = 0;
         // let pc = 2;
         let min = 1;
         let max = 3;    // Elegimos el maximo, y en la formula, reemplazamos el ultimo valor para que sume con 1, siendo el minimo.
-        let pc = Math.floor(Math.random()*(max-min+1)+1);
+        let pc = Math.floor(Math.random()*(max-min+1)+min);
         // el Rango que queremos que pc elija, seria entre 1 y 3, es decir, minimo y maximo.
 
         jugador = prompt("Elige : 1 piedra, 2 papel, 3 tijera")
 
-        //alert("Elige jugador"+jugador)
         if(jugador==1){
             alert("Elegiste piedra")
         }else if(jugador ==2){
@@ -29,19 +32,19 @@
         // Combate
         if(pc == jugador){
             alert("EMPATE")
-            alert("PC eligió: "+pc)
+            alert("PC eligió la opción: "+pc)
         }else if(jugador == 1 && pc == 3){
             alert("GANASTE")
-            alert("PC eligió: "+pc)
+            alert("PC eligió la opción: "+pc)
         }else if(jugador == 2 && pc == 1){
             alert("GANASTE")
-            alert("PC eligió: "+pc)
+            alert("PC eligió la opción: "+pc)
         }else if(jugador == 3 && pc == 2){
             alert("GANASTE")
-            alert("PC eligió: "+pc)
+            alert("PC eligió la opción: "+pc)
         }else{
             alert("PERDISTE")
-            alert("PC eligió: "+pc)
+            alert("PC eligió la opción: "+pc)
         }
 
         // Formula para la PC para que tome valores random para la pc
