@@ -1,0 +1,14 @@
+Durante la ejercitación se utilizaron los comandos:
+1> Para ver las bases:
+show dbs
+
+2> Para ver las colecciones:
+show collections
+
+3> Insertamos los key nombre y edad y sus valores, David y 30.
+db.insertar.insertOne({"nombre":"David","edad":30})
+
+
+==================================
+
+Se adjuntan imagenes.
