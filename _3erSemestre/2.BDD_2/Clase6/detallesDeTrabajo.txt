@@ -1,65 +1,36 @@
 Durante la ejercitación se utilizaron los comandos:
-1> Para ver las bases:
-show dbs
+1> Creamos la base 'paso'
+use paso
 
-2> Para ver las colecciones:
-show collections
-
-3> Insertamos los key nombre y edad y sus valores, David y 30:
-db.insertar.insertOne({"nombre":"David","edad":30})
-
-4> Insertamos multiples key:
-db.insertar.insertMany([{"nombre":"Lucas"},{"nombre":"Daniel"},{"nombre":"Silvana"}])
-
-5> Removemos la key Silvana:
-db.insert.remove({"nombre":"Silvana"})
-esto arroja error, ya que '.remove' esta deprecated
-
-6> Se utiliza 'insertar' y el comando se corrije
-db.insertar.remove({"nombre":"Silvana"})
-
-7> Utilizamos deleteOne para eliminar datos
-db.insertar.deleteOne({"nombre":"Lucas"})
-
-8> Para visualizar objetos
-db.insertar.find()
-
-9> Utilizaremos drop para eliminar coleccion que no usemos
-db.insertar.drop()
-
-10> Para asignarle al key nombre, el key ubicacion con su valor
-db.insertar.updateOne({"nombre":"Daniel"},{$set:{"ubicacion":"Buenos Aires"}})
-
-11> Para quitar al key nombre, el key anterior
-db.insertar.updateOne({"nombre":"Daniel"},{$unset:{"ubicacion":""}})
-
-12> Nuevamente hacemos un set sobre el key anterior y chequeamos con find
-db.insertar.updateOne({"nombre":"Daniel"},{$set:{"ubicacion":"Salta"}})
-db.insertar.find()
-
-13> Esta vez utilizaremos 'rename' dentro de updateOne, esto para modificar un campo:
-db.insertar.updateOne({"nombre":"Daniel"},{$rename:{"ubicacion":"ciudad"}})
-esto solo modificaria el key, pero NO su value
-
-14> Agregamos una llave con set y un valor numerico 
-db.insertar.updateOne({"nombre":"Daniel"},{$set:{"time":1000}})
-
-15> Utilizando el metodo Max. ingresamos en el campo "time" y un valor estimado, ej 1000hs cursado
-db.insertar.updateOne({"nombre":"Daniel"},{$max:{"time":1000}})
-
-16> Se crea una nueva base y se agrega un elemento:
-use dbs
-show dbs
-use incremento
-db.incrementar.insertOne({"nombre":"youtube","url":"www.youtube.com","vistas":1000,"likes":500})
-db.incrementar.find()
+> Insertamos los siguientes datos:
+db.paso.InsertMany([{"nombre":"Hugo","apellido":"Garcia"},{"nombre":"Lucia","apellido":"Ramirez"},{"nombre":"carlos","apellido":"martinez"}])​
 
 
-17> Utilizamos la sentencia $inc para incrementar valor
-db.incrementar.update({"url":"www.youtube.com"},{$inc:{"vistas":1000}})
-db.incrementar.find()
+> Esta sentencia nos mostrara todos los index que tiene nuestra collection​
+db.paso.getindexes()
 
-18> 
+> Por defecto nos mostrará uno si no hemos creado ninguno:
+[{"v":2, "key":{"_id":1},"name":"_id_"}] 
+
+
+> Búsqueda de datos más lenta​:
+db.paso.find{"nombre": "carlos"})​
+
+> Búsqueda más eficáz​:
+db.paso.find({"_id":objetID (""")})
+
+> Para crear un index:
+​db.paso. createindex ({"apellido":1})
+Solo buscará los apellidos, los demás datos quedarán excluidos.
+
+Como crear índices únicos
+
+>db.paso2. InsertMany([{"usuario":Fer_4T, "contraseña":"12345d","correo": fer@ejemplo.com",{"usuario":maria, "contraseña":"12345f","correo": maria@ejemplo.com"},{"usuario":kev, "contraseña":"12345k","correo": kev@ejemplo.com"});​
+
+>db.paso2. Find()​
+
+> Nos mostrará la colección de datos creada.​
+db.paso2. GetIndexes()
 
 ==================================
 
