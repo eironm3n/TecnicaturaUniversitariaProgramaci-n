@@ -55,7 +55,7 @@ db.ejemplo.createIndex({"nombre":1},{"background":true})
 
 db.ejemplo.createIndex({"fecha":1},{"background":true})
 
-
+Se realizan las tareas dentro de Studio3T
 ==================================
 
 Se adjuntan imagenes.
