@@ -3,34 +3,37 @@ Durante la ejercitación se utilizaron los comandos:
 use paso
 
 > Insertamos los siguientes datos:
-db.paso.InsertMany([{"nombre":"Hugo","apellido":"Garcia"},{"nombre":"Lucia","apellido":"Ramirez"},{"nombre":"carlos","apellido":"martinez"}])​
+db.paso.insertMany([{"nombre":"hugo","apellido":"garcia"},{"nombre":"lucia","apellido":"ramirez"},{"nombre":"carlos","apellido":"martinez"}])
 
 
 > Esta sentencia nos mostrara todos los index que tiene nuestra collection​
-db.paso.getindexes()
+db.paso.getIndexes()
 
-> Por defecto nos mostrará uno si no hemos creado ninguno:
+>>> Por defecto nos mostrará uno si no hemos creado ninguno:
 [{"v":2, "key":{"_id":1},"name":"_id_"}] 
 
+> Búsqueda de datos clásica:
+db.paso.find({"nombre":"carlos"})
 
-> Búsqueda de datos más lenta​:
-db.paso.find{"nombre": "carlos"})​
-
-> Búsqueda más eficáz​:
-db.paso.find({"_id":objetID (""")})
+> Búsqueda de indice por número asociado al mismo:
+db.paso.find({"_id":ObjectId("68229bdae9810f3329b5f89c")})
+Tener en cuenta que al utilizar find() dentro de la colección, cada elemento tiene asociado un ID unico.
+De esta forma este comando ayuda a encontrarlo de forma mas especifica.
 
 > Para crear un index:
-​db.paso. createindex ({"apellido":1})
+​db.paso.createIndex({"apellido":1})
 Solo buscará los apellidos, los demás datos quedarán excluidos.
 
-Como crear índices únicos
+> creamos la base 'paso2':
+use paso2
 
->db.paso2. InsertMany([{"usuario":Fer_4T, "contraseña":"12345d","correo": fer@ejemplo.com",{"usuario":maria, "contraseña":"12345f","correo": maria@ejemplo.com"},{"usuario":kev, "contraseña":"12345k","correo": kev@ejemplo.com"});​
+> Creamos índices únicos:
+db.paso2.insertMany([{"usuario":"Fer_4T","contraseña":"12345d","correo":"fer@ejemplo.com"},{"usuario":"maria","contraseña":"12345f","correo":"maria@ejemplo.com"},{"usuario":"kev","contraseña":"12345k","correo":"kev@ejemplo.com"}])
 
->db.paso2. Find()​
+> Chequeamos con: db.paso2.find()
 
 > Nos mostrará la colección de datos creada.​
-db.paso2. GetIndexes()
+db.paso2.getIndexes()
 
 ==================================
 
