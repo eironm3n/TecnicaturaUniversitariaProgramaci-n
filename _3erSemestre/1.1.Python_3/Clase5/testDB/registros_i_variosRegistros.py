@@ -1,6 +1,5 @@
 """
-i = insertar
-insertar registros con psycopg2
+insertar varios registros con psycopg2
 """
 import psycopg2
 conexion = psycopg2.connect(user='postgres',password='admin',host='127.0.0.1',port='5432',database='test_db')
@@ -10,10 +9,6 @@ try:
             sentencia = 'INSERT INTO persona (nombre, apellido, email) VALUES (%s,%s,%s)'
             valores = ('Carlos','Lara','clara@mail.com')
             cursor.execute(sentencia, valores)
-            
-            # conexion.commit()
-            # Lo anterior no lo precisamos ya que el uso del with lo realiza
-
             registros_insertados = cursor.rowcount
             print(f'Los registros insertados son: {registros_insertados}')
 
