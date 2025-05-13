@@ -35,6 +35,27 @@ db.paso2.insertMany([{"usuario":"Fer_4T","contraseña":"12345d","correo":"fer@ej
 > Nos mostrará la colección de datos creada.​
 db.paso2.getIndexes()
 
+INDEXACIÓN EN SEGUNDO PLANO:
+
+> creamos una nueva colección con el nombre de segundo​
+use segundo ​
+
+> Insertamos dentro de la coleccion 'ejemplo' la siguiente información:
+db.ejemplo.insertMany([{"nombre":"lautaro","edad":15,"fecha":new Date()},{"nombre":"gabriela","edad":16,"fecha":new Date()},{"nombre":"natalia","edad":19,"fecha":new Date()},{"nombre":"david","edad":20,"fecha":new Date()}])
+
+> Chequeamos con: db.ejemplo.find()
+
+​PARA CREAR LOS INDICES EN 2D.PLANO UTILIZANDO LA PROPIEDAD BACKGROUND​
+
+>db.ejemplo.find().pretty()
+Nos mostrará los registros que creamos ​
+
+> Para agregar los índices utilizaremos los nombres y fechas que son índices que podemos agregar.​
+db.ejemplo.createIndex({"nombre":1},{"background":true})
+
+db.ejemplo.createIndex({"fecha":1},{"background":true})
+
+
 ==================================
 
 Se adjuntan imagenes.
