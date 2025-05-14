@@ -9,7 +9,7 @@ try:
             sentencia = 'UPDATE persona SET nombre=%s, apellido=%s, email=%s WHERE id_persona=%s'
 
             valores = (
-                ('Moch','castello','mcastello@mail.com', 2),
+                ('Juan','Perez','jperez@mail.com', 2),
                 ('Toribia','Tinelli', 'ttinelli@mail.com', 3)
             )
 
