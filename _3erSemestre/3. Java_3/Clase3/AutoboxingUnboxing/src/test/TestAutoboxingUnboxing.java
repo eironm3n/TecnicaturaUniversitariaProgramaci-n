@@ -12,6 +12,7 @@ public class TestAutoboxingUnboxing {
         Clases envolventes de tipos primitivos
         int = la clase envolvente es Integer
         */
+        
         int enteroPrim = 10;    // Tipo primitivo
         Integer entero = 10;    // Tipo Object con la clase Integer
         System.out.println("Soy un entero Primitivo: " + enteroPrim);
