@@ -1,9 +1,9 @@
 /*
-Clase 3 - ForEach - parte 1
+Clase 3 - ForEach - parte 2
  */
-package test;
+package domain;
 
-public class TestForEach {
+public class Persona {
     public static void main(String[] args) {
         int edades[] = {5, 6, 8, 9};
         for (int edad: edades) {    //sintaxis del forEach
