@@ -23,6 +23,7 @@ public class TestForEach2 {
         Se uso la funcionalidad del Java:
         Menú: Run --> Clean and Build Project
         Luego: Run --> Run File sobre TestForEach2.java
+        Tambien funciona --> Clean and Build o Rebuild Project
          */
         
     }
