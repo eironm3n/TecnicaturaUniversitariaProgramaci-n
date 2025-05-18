@@ -1,13 +1,9 @@
 /*
- Metodos de sobreescritura
-La sobreescritura ocurre cuando la clase hija crea una escritura sobre el comportamiento de la clase padre.
- 
-Esta es la clase padre Empleado
-*/
+Replicamos a el proyecto Sobreescritura
+Pero aqui aplicaremos Polimorfismo
+ */
+
 package domain;
-
-//import java.security.ProtectionDomain;
-
 
 public class Empleado {
     protected String nombre; 
