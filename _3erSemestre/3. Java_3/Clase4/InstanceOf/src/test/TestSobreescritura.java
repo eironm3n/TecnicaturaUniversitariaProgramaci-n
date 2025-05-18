@@ -1,7 +1,7 @@
 /*
-Replicamos a el proyecto Sobreescritura
-Pero aqui aplicaremos Polimorfismo
- */
+Replicamos a el proyecto Polimorfismo
+Pero aqui aplicaremos InstanceOf
+*/
 
 package test;
 
