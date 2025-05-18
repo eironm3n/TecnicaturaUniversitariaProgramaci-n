@@ -17,7 +17,7 @@ public class TestDefault {
         System.out.println("ClaseH2 atributo default = " + claseH2.atributoDefault);
         
         Clase4 clase4 = new Clase4("Publico");
-        System.out.println(clase4.getAtributoPrivate());
+        System.out.println(clase4.getAtributoPrivate()); 
         clase4.setAtributoPrivate("Cambio");
         System.out.println("clase4 = " + clase4.getAtributoPrivate());
         
