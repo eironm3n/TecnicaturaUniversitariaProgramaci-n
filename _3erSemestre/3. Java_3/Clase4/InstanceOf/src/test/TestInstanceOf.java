@@ -14,8 +14,8 @@ public class TestInstanceOf {
 
         Empleado empleado1 = new Empleado("Juan", 10000);
         determinarTipo(empleado1);
-        Gerente gerente1 = new Gerente("Jose", 5000, "Sistemas");
-
+        empleado1 = new Gerente("Jose", 5000, "Sistemas");
+        determinarTipo(empleado1);
     }
     
     public static void determinarTipo(Empleado empleado){
@@ -29,6 +29,4 @@ public class TestInstanceOf {
             System.out.println("Es de tipo Object");
         }
     }
-    
-    
 }
