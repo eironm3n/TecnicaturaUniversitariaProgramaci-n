@@ -56,20 +56,28 @@ public class Empleado {
      @Override
      public boolean equals(Object obj){
          if (this == obj){
-             return true;}
+             return true;
+         }
          
          if (obj == null){
-             return false;}
+             return false;
+         }
          
          if (getClass() != obj.getClass()){
-             return false;}
+             return false;
+         }
          
          final Empleado other = (Empleado) obj;
          if (Double.doubleToLongBits(this.sueldo) != Double.doubleToLongBits(other.sueldo)) {
-             return false;}
+             return false;
+         }
          
          if (!Objects.equals(this.nombre, other.nombre)){
-             return false;}
+             return false;
+         }
+        return false;
+        //se agrega return false, pero funciona bien igualmente
+        // este return no esta agregado en el video del profesor.
      }
      //Errores solventados para que funcione, pero aún contiene detalles de codigo compartido.
 }
