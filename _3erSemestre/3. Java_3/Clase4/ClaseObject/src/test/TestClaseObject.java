@@ -34,5 +34,6 @@ public class TestClaseObject {
         System.out.println("El valor hashCode es diferente");
         }
         */
+        
     }
 }
