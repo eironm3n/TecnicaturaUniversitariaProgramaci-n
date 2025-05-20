@@ -1,0 +1,4 @@
+1- Tablero donde se van ubicando las reinas
+2- Tablero terminado con todas las reinas ubicadas
+3- Arreglo donde se vean los indices planteados de cada reina
+4- El valor N, puede ser como minimo 8 en adelante
