@@ -21,6 +21,5 @@ Ejercitación realizada:
 7. Abriremos Visual Studio Code colocando solo un punto '.'
 8. Cargamos el html5 por default que ofrece **VSC**
 9. Recordar que los comentarios se ingresan con ```<!---->```
-10. 
-11. 
-12. 
+==============================================================================
+

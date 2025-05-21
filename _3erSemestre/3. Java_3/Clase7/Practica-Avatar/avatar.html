@@ -6,6 +6,37 @@
     <title>Avatar: La Leyenda de Aang</title>
 </head>
 <body>
-    <h1> AVATAR 🔥 🌊 🪨 🌪️ </h1>
+    <h1> AVATAR 🔥 🌊 🪨 🌪️ </h1>   <!--Esto es estatico, NO cambia, el h1 se utiliza una vez-->
+
+    <section id=""seleccionar-personaje">
+        <h2>Elige tu personaje</h2>
+        
+        
+        Zuko -> Fuego   <!--Aca van los personajes-->
+        Katara -> Agua
+        Aang -> Aire
+        Toph -> Tierra
+
+            <button>Seleccionar</button>    <!--El boton para seleccionar el personaje-->
+    </section>
+    <section id="seleccionar-ataque">
+        <h2>Elige tu ataque</h2>    <!--Se puede utilizar varias veces-->
+        <p>Tu personaje tiene <span>3</span> vidas</p>  <!--Pero debe ser dinamico, necesitamos que cambie la vida-->
+        <p>Los personajes del enemigo tienen <span>3</span> vidas</p> <!--Con la etiquetaspan vamos a modificar el 3 con JS -->
+        <p>
+            <button>Fuego 🔥</button>
+            <button>Agua  🌊</button>
+            <button>Tierra 🪨</button>
+        <button>Aire 🌪️</button>
+        </p>
+    </section>
+
+    <section id="mensajes"> <!--Sera un párrafo dinamico-->
+        <p>Tu personaje ataco con todo el poder del FUEGO, el personaje del enemigo atacó con el medio poder de la TIERRA - GANASTE 🎆</p>   <!--Se -->
+    </section>
+
+    <section id="reiniciar">
+       <button>Reiniciar</button>
+    </section>
 </body>
 </html>
