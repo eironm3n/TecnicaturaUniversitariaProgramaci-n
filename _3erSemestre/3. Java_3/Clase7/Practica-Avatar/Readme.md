@@ -9,7 +9,7 @@
 - Rojas, Arón
 
 **Práctica de Juego "Avatar: La Leyenda de Aang**! 🎓  
-![imagen](https://github.com/eironm3n/TecnicaturaUniversitariaProgramaci-n/tree/ejercitacion/_3erSemestre/3.%20Java_3/Clase7/Practica-Avatar/assets/avatar.jpg)
+![imagen](/assets/avatar.jpg)
 ==============================================================================
 Ejercitación realizada:
 1. Ingresamos al subsistema Linux dentro de Windows
