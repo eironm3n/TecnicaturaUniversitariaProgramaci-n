@@ -9,7 +9,7 @@
 - Rojas, Arón
 
 **Práctica de Juego "Avatar: La Leyenda de Aang**! 🎓  
-(/assets/avatar.jpg)
+![](/assets/avatar.jpg)
 ==============================================================================
 Ejercitación realizada:
 1. Ingresamos al subsistema Linux dentro de Windows
