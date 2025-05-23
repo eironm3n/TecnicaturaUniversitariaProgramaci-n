@@ -1,0 +1,11 @@
+Acceso a los archivos de Windows desde Linux
+
+Para acceder a los archivos=
+
+* Linux ==> Windows
+Revisar directorio /mnt, y continuado a ello la letra de unidad de Windows
+Ej: cd /mnt/c
+
+* Windows ==> Linux
+Ir a "\\wsl.localhost\" o hacer click en el icono Linux
+
