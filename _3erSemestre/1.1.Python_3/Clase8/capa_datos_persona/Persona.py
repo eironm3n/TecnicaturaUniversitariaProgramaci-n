@@ -6,7 +6,9 @@ Clase 8 Capa de Datos: Logging y Postgresql Parte 2
 from logger_base import log
 
 class Persona:
-    def __init__(self, id_persona,nombre,apellido,email):
+    # def __init__(self, id_persona,nombre,apellido,email):
+    # se modifica para que se pueda almacenar los valores eligiendo manualmente el lugar y seteando al resto como NONE
+    def __init__(self, id_persona=None,nombre=None,apellido=None,email=None):
         self._id_persona = id_persona
         self._nombre = nombre
         self.apellido = apellido
@@ -63,6 +65,10 @@ class Persona:
 if __name__=='__main__':
     persona1 = Persona(1,'Juan','Perez','jperez@mail.com')
     log.debug(persona1)
-    persona2 = Persona('Jose','Leppez','jleppez@mail.com')
+    # se elige a mano para que no exista cruce de informacion
+    persona2 = Persona(nombre='Jose',apellido='Leppez',email='jleppez@mail.com')
     log.debug(persona2)
 
+    # esto elimina el contenido anterior, pero setea el indice 1
+    persona1 = Persona(id_persona=1)
+    log.debug(persona1)
