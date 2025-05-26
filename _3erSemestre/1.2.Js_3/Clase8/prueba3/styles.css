@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 95vw;
+  width: 900px;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.controls {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.controls label {
+  align-self: center;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.controls input,
+.controls button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.controls button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.controls button:hover {
+  background-color: #45a049;
+}
+
+.boards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.boards-container > div {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.board {
+  display: grid;
+  gap: 2px;
+  margin-top: 0.5rem;
+  border: 2px solid #4caf50;
+  border-radius: 0.5rem;
+  background-color: #e7f4ea;
+}
+
+.cell {
+  width: 45px;
+  height: 45px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.cell.visited {
+  background-color: #d1e7dd;
+  color: #000;
+}
+
+.positions-index {
+  margin-top: 1rem;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: #f4f9f4;
+  border: 1px solid #4caf50;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-family: monospace;
+  font-size: 0.85rem;
+  text-align: left;
+}
