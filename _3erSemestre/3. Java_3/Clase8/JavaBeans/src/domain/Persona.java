@@ -1,5 +1,7 @@
 /*
-Clase 8 - JavaBeans 
+Clase 8 - JavaBeans
+
+Serializacion es convertir nuestro objeto en 0 y 1
  */
 package domain;
 
