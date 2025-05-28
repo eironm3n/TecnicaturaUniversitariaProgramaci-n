@@ -14,7 +14,7 @@ public class TestExcepciones {
     }
 }
 */
-public class TestExcepciones {
+public class TestExcepciones2 {
     public static void main(String[] args) {
         int resultado = 0;
         try{
