@@ -22,4 +22,7 @@ Ejercitación realizada:
 8. Cargamos el html5 por default que ofrece **VSC**
 9. Recordar que los comentarios se ingresan con ```<!---->```
 ==============================================================================
-
+### Se continua con la clase anterior, hoy es la Clase 8 de Java
+1. Revisamos con ```ll``` en Linux para ver el contenido listado
+2. Ingresamos al directorio con ````cd /PracticaAvatar``` y colocamos ```code .``` para abrir Visual Studio Code
+3. 
