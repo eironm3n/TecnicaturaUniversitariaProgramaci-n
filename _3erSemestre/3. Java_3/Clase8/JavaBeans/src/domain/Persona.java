@@ -3,6 +3,8 @@ Clase 8 - JavaBeans
  */
 package domain;
 
+import java.io.Serializable;
+
 public class Persona implements Serializable{
     private String nombre;
     private String apellido;
