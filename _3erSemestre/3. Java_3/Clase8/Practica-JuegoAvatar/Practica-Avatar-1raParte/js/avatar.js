@@ -8,15 +8,18 @@ function seleccionarPersonajeJugador(){
     let inputKatara = document.getElementById('katara')
     let inputAang = document.getElementById('aang')
     let inputToph = document.getElementById('toph')
+    let spanPersonajeJugador = document.getElementById('personaje-jugador')
 
     if(inputZuko.checked){
-    alert('Seleccionaste a Zuko')
+        spanPersonajeJugador.innerHTML = 'Zuko'
     }else if(inputKatara.checked){
-    alert('Seleccionaste a Katara')
+        spanPersonajeJugador.innerHTML = 'Katara'
     }else if(inputAang.checked){
-    alert('Seleccionaste a Aang')
+        spanPersonajeJugador.innerHTML = 'Aang'
     }else if(inputToph.checked){
-    alert('Seleccionaste a Toph')
+        spanPersonajeJugador.innerHTML = 'Toph'
+    }else{
+        alert('Selecciona un personaje')
     }
 }
 
