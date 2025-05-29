@@ -1,0 +1,81 @@
+:root {
+  --tam-celda: 40px;
+  --tam-celda-indice: 30px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #2c3e50;
+}
+
+.controles {
+  margin-bottom: 20px;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 5px;
+}
+
+button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.tableros {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.tablero, .indice {
+  display: grid;
+  border: 2px solid #ccc;
+  background: white;
+  margin-top: 10px;
+}
+
+.tablero div, .indice div {
+  width: var(--tam-celda);
+  height: var(--tam-celda);
+  border: 1px solid #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.indice div {
+  width: var(--tam-celda-indice);
+  height: var(--tam-celda-indice);
+  font-size: 0.7em;
+}
+
+.visitada {
+  background-color: #d1e7dd;
+}
+
+.actual {
+  background-color: #f9c74f;
+  color: black;
+}
