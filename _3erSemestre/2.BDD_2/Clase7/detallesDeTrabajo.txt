@@ -4,11 +4,45 @@ OPERADORES LÓGICOS:
 $gte : operador  que me va a permitir consultar o traer datos que sean   mayor o igual a que 
 
 Por ejemplo :
-1> Recuperar todos los registros que en el campo "cantidad" tiene 20 o más​
-
+!> Recuperar todos los registros que en el campo "cantidad" tiene 20 o más​
 db.logico_uno.find({ cantidad:{ $gte : 20 }})
 
-2> 
+
+1> Creamos base de datos de nombre consulta​
+Use consulta​​
+
+2> Creamos colección logico_uno​
+db.logico_uno.insertMany([{"nombre":"registro1","cantidad":40},{"nombre":"registro2","cantidad":10},{"nombre": "registro3", "cantidad": 60}])
+
+3> Utilizamos operador lógico $gte​
+db.logico_uno.find({"cantidad":{"$gte":20}})
+
+4> Creamos colección logico_dos​
+db.logico_dos.insertMany([{"nombre":"rodrigo","edad":18},{"nombre":"juan","edad":30},{"nombre":"jesica","edad":40}])
+​
+5> Utilizamos operador lógico $gt
+db.logico_dos.find({"edad":{"$gt":20}})
+
+6> $lt: operador  que me va a permitir consultar o traer datos que sean menor que.​
+Ej= Recuperar todos los datos que tienen una edad  menor a 40​
+db.logico_dos.find({ "edad": { $lt : 40 }})
+
+7> Combinando "$gt" y "$lt"​
+Los operadores lógicos también los podemos combinar para que nos arrojen otros resultados.​
+Ejemplo= Recuperar todos los datos que tienen una edad  mayor a 20 y menor a 40​
+db.logico_dos.find({ "edad": { "$gt": 20, "$lt" : 40 }})
+
+8> $lte : operador  que me va a permitir consultar o traer datos que sean menor o igual que​
+Ejemplo: Recuperar todos los datos que tienen visitas menor o igual a 4000​
+db.logico_tres.find({ "visitas": { "$lte" : 4000 }})
+
+9> Para que sea efectivo el paso anterior, creamos colección logico_tres​
+db.logico_tres.insertMany([{"sitio":"www.facebook.com","vistas":4000},{"sitio":"www.youtube.com","vistas":3000}])
+
+10> Ahora si podremos probar y tambien usar otros comandos
+db.logico_tres.find({"visita":{"$gt":2000 "$lte":4000}})​
+db.logico_tres.find({ "visitas": { "$lte" : 4000 }})​
+db.logico_tres.find({ "visitas": { "$lte" : 3500 }})
 
 ==================================
 
