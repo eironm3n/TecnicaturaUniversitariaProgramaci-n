@@ -1,5 +1,14 @@
 Durante la ejercitación se utilizaron los comandos:
+OPERADORES LÓGICOS:
 
+$gte : operador  que me va a permitir consultar o traer datos que sean   mayor o igual a que 
+
+Por ejemplo :
+1> Recuperar todos los registros que en el campo "cantidad" tiene 20 o más​
+
+db.logico_uno.find({ cantidad:{ $gte : 20 }})
+
+2> 
 
 ==================================
 
