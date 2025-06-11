@@ -1,22 +1,62 @@
 Durante la ejercitación se utilizaron los comandos:
-Optimizar consultas en MongoDB es esencial para garantizar un rendimiento eficiente y escalabilidad
-- método explain()
+--- EJERCICIO N° 1: Registro de renta de películas / alquiler de maquinarias ---
 
-Nos brindará información detallada sobre cómo MongoDB ejecuta una consulta, incluyendo el uso de índices y la cantidad de documentos examinados.
-Esto te permite identificar cuellos de botella y ajustar tus consultas para mejorar el rendimiento.
+// A y B - Crear base de datos
+use registro_renta
 
-Pasos para una buena optimización en Mongo DB:
+// C - Insertar 8 documentos
+db.rentas.insertMany([
+  { cliente: "Juan Pérez", maquinaria: "Excavadora", fecha_alquiler: "2025-06-01" },
+  { cliente: "María Gómez", maquinaria: "Hormigonera", fecha_alquiler: "2025-06-02" },
+  { cliente: "Luis Fernández", maquinaria: "Grúa", fecha_alquiler: "2025-06-03" },
+  { cliente: "Carla Ramírez", maquinaria: "Compactadora", fecha_alquiler: "2025-06-04" },
+  { cliente: "José Sánchez", maquinaria: "Retroexcavadora", fecha_alquiler: "2025-06-05" },
+  { cliente: "Ana Torres", maquinaria: "Plataforma elevadora", fecha_alquiler: "2025-06-06" },
+  { cliente: "Diego López", maquinaria: "Camión Volcador", fecha_alquiler: "2025-06-07" },
+  { cliente: "Lucía Herrera", maquinaria: "Martillo neumático", fecha_alquiler: "2025-06-08" }
+])
 
-Diseña un esquema eficiente Embebido vs. Referenciado
-Optimiza las consultas:
-Proyecciones específicas:
-Monitoriza y analiza el rendimiento
-Utiliza herramientas de monitoreo:
-Considera el sharding para escalar horizontalmente
-Mantén la base de datos limpia y actualizada.
+// D - Mostrar todos los datos
+db.rentas.find()
+
+// E - Crear índice para mejorar fluidez
+db.rentas.createIndex({ cliente: 1, fecha_alquiler: 1 })
+
+// Chequeo
+db.rentas.countDocuments()
+db.rentas.getIndexes()
+
+--- EJERCICIO N° 2: Base de datos de comidas rápidas ---
+
+// A - Crear base de datos
+use comida_rapida
+
+// Insertar datos
+db.datos.insertMany([
+  { tipo: "empleado", nombre: "Carlos Díaz", puesto: "Cocinero" },
+  { tipo: "cliente", nombre: "Juan López", pedido: "Hamburguesa doble" },
+  { tipo: "cliente", nombre: "Ana Vera", pedido: "Papas grandes" },
+  { tipo: "empleado", nombre: "Lucía Márquez", puesto: "Cajera" },
+  { tipo: "pedido", cliente: "Fernando Ruiz", items: ["Combo 1", "Bebida"] },
+  { tipo: "pedido", cliente: "Sofía Luna", items: ["Combo vegetariano"] }
+])
+
+// B - Crear índices
+db.datos.createIndex({ tipo: 1, nombre: 1 })
+
+// C - Mostrar 5 documentos
+db.datos.find().limit(5)
+
+// D - Consultas
+db.datos.find({ tipo: "empleado" })
+db.datos.find({ tipo: "pedido" })
+
+// Chequeo
+db.datos.countDocuments()
+db.datos.getIndexes()
 
 
-CONTINUAR
+
 ==================================
 
 Se adjuntan imagenes.
