@@ -40,9 +40,9 @@ db.logico_tres.find({ "visitas": { "$lte" : 4000 }})
 db.logico_tres.insertMany([{"sitio":"www.facebook.com","vistas":4000},{"sitio":"www.youtube.com","vistas":3000}])
 
 10> Ahora si podremos probar y tambien usar otros comandos
-db.logico_tres.find({"visita":{"$gt":2000 "$lte":4000}})​
-db.logico_tres.find({ "visitas": { "$lte" : 4000 }})​
-db.logico_tres.find({ "visitas": { "$lte" : 3500 }})
+db.logico_tres.find({"vistas":{"$gt":2000 "$lte":4000}})​
+db.logico_tres.find({ "vistas": { "$lte" : 4000 }})​
+db.logico_tres.find({ "vistas": { "$lte" : 3500 }})
 
 ==================================
 

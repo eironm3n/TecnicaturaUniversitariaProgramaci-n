@@ -1,0 +1,75 @@
+Durante la ejercitación se utilizaron los comandos=
+
+Ejercitacion de clase, actividad de repaso de los comandos anteriores y más:
+
+*) Crea un base de datos con una colección de nombre registro de compra de artículos.
+
+A- Colocar nombre a la base de datos​
+B- En la colección se guardarán 6 documentos con los siguientes datos de la compra:​
+-Nombre del comprador​
+-Método de pago​
+-Artículos de compra​
+-Número de artículos que compró​
+-Monto total​
+
+C- Realizar una consulta con los clientes que compraron en efectivo.​
+D- Mostrar todo los datos de los clientes que compraron más de un artículo
+
+/********************************************************\
+Actividades:
+1> Colocar nombre a la base de datos
+use registro_compras
+
+2> Crear la colección registro y guardar 6 documentos
+db.registro.insertMany([
+    {
+    nombre_comprador: "Ana García",
+    metodo_pago: "efectivo",
+    articulos: ["lápiz", "cuaderno"],
+    cantidad_articulos: 2,
+    monto_total: 1500
+  },
+  {
+    nombre_comprador: "Luis Pérez",
+    metodo_pago: "tarjeta",
+    articulos: ["mochila"],
+    cantidad_articulos: 1,
+    monto_total: 4000
+  },
+  {
+    nombre_comprador: "Marta López",
+    metodo_pago: "efectivo",
+    articulos: ["regla", "marcador", "hojas"],
+    cantidad_articulos: 3,
+    monto_total: 2500
+  },
+  {
+    nombre_comprador: "Carlos Ruiz",
+    metodo_pago: "transferencia",
+    articulos: ["calculadora"],
+    cantidad_articulos: 1,
+    monto_total: 6000
+  },
+  {
+    nombre_comprador: "Elena Díaz",
+    metodo_pago: "efectivo",
+    articulos: ["tijera", "cartulina"],
+    cantidad_articulos: 2,
+    monto_total: 1700
+  },
+  {
+    nombre_comprador: "Jorge Martín",
+    metodo_pago: "tarjeta",
+    articulos: ["folder", "engrapadora", "resaltador"],
+    cantidad_articulos: 3,
+    monto_total: 3500}])
+
+3> Consulta con los clientes que compraron en efectivo
+db.registro.find({ metodo_pago: "efectivo" })
+
+4> Mostrar los datos de los clientes que compraron más de un artículo
+db.registro.find({ cantidad_articulos: { $gt: 1 } })
+
+==================================
+
+Se adjuntan imagenes.
