@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #007BFF; /* Azul */
+    color: #000;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 3em;
+    color: black;
+    margin-bottom: 30px;
+  }
+  
+  h2, h3 {
+    color: white;
+  }
+  
+  input, button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  input {
+    width: 200px;
+  }
+  
+  button {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #333;
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: white;
+    color: black;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .error {
+    color: yellow;
+    font-weight: bold;
+  }
+  
+  #totalDia {
+    font-size: 1.2em;
+    color: white;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  #resultadoBusqueda {
+    margin-top: 10px;
+    color: white;
+  }
+  

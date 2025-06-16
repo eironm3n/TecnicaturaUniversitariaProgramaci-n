@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estacionamiento</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, button { margin: 5px; padding: 8px; }
+    table { margin-top: 20px; border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h2>Registro de Patentes</h2>
+  <input type="text" id="patente" placeholder="Ingresar patente">
+  <button onclick="registrarPatente()">Registrar</button>
+
+  <h3>Buscar vehículo</h3>
+  <input type="text" id="buscarPatente" placeholder="Patente a buscar">
+  <button onclick="buscarVehiculo()">Buscar</button>
+
+  <p id="resultadoBusqueda"></p>
+
+  <h3>Listado actual</h3>
+  <table id="tablaVehiculos">
+    <tr>
+      <th>Patente</th>
+      <th>Hora de ingreso</th>
+      <th>Monto</th>
+      <th>Acciones</th>
+    </tr>
+  </table>
+
+  <button onclick="finalizarDia()">Finalizar el día</button>
+  <p id="totalDia"></p>
+
+  <script>
+    let vehiculos = [];
+    let totalCobrado = 0;
+
+    function registrarPatente() {
+      const patenteInput = document.getElementById("patente");
+      const patente = patenteInput.value.trim().toUpperCase();
+      const resultado = document.getElementById("resultadoBusqueda");
+
+      if (!patente) {
+        resultado.innerText = "Por favor, ingresá una patente";
+        resultado.className = "error";
+        return;
+      }
+
+      if (vehiculos.some(v => v.patente === patente)) {
+        resultado.innerText = "Esta patente ya está registrada";
+        resultado.className = "error";
+        return;
+      }
+
+      const horaIngreso = new Date();
+      vehiculos.push({ patente, horaIngreso, monto: null });
+      actualizarTabla();
+      patenteInput.value = "";
+      resultado.innerText = `Patente ${patente} registrada con éxito`;
+      resultado.className = "";
+    }
+
+    function actualizarTabla() {
+      const tabla = document.getElementById("tablaVehiculos");
+      tabla.innerHTML = "<tr><th>Patente</th><th>Hora de ingreso</th><th>Monto</th><th>Acciones</th></tr>";
+
+      vehiculos.forEach((vehiculo, index) => {
+        const fila = document.createElement("tr");
+
+        const tdPatente = document.createElement("td");
+        tdPatente.textContent = vehiculo.patente;
+
+        const tdHora = document.createElement("td");
+        tdHora.textContent = vehiculo.horaIngreso.toLocaleTimeString();
+
+        const tdMonto = document.createElement("td");
+        tdMonto.textContent = vehiculo.monto ? `$${vehiculo.monto}` : "-";
+
+        const tdAcciones = document.createElement("td");
+        if (vehiculo.monto === null) {
+          const botonRetirar = document.createElement("button");
+          botonRetirar.textContent = "Retirar";
+          botonRetirar.onclick = () => retirarVehiculo(index);
+          tdAcciones.appendChild(botonRetirar);
+        } else {
+          tdAcciones.textContent = "Retirado";
+        }
+
+        fila.appendChild(tdPatente);
+        fila.appendChild(tdHora);
+        fila.appendChild(tdMonto);
+        fila.appendChild(tdAcciones);
+        tabla.appendChild(fila);
+      });
+    }
+
+    function retirarVehiculo(index) {
+      const vehiculo = vehiculos[index];
+      const ahora = new Date();
+      const diferenciaMs = ahora - vehiculo.horaIngreso;
+      const horas = diferenciaMs / (1000 * 60 * 60);
+      const costo = horas > 2 ? 2000 : 1500;
+
+      if (confirm(`¿Seguro que querés retirar el vehículo ${vehiculo.patente}?\nTiempo: ${horas.toFixed(2)} hs\nA pagar: $${costo}`)) {
+        vehiculo.monto = costo;
+        totalCobrado += costo;
+        actualizarTabla();
+        document.getElementById("resultadoBusqueda").innerText = `Vehículo ${vehiculo.patente} retirado. Pagó $${costo}`;
+        document.getElementById("resultadoBusqueda").className = "";
+      }
+    }
+
+    function buscarVehiculo() {
+      const patente = document.getElementById("buscarPatente").value.trim().toUpperCase();
+      const resultado = document.getElementById("resultadoBusqueda");
+
+      if (!patente) {
+        resultado.innerText = "Por favor, ingresá una patente para buscar";
+        resultado.className = "error";
+        return;
+      }
+
+      const vehiculo = vehiculos.find(v => v.patente === patente);
+
+      if (!vehiculo) {
+        resultado.innerText = `No se encontró el vehículo con patente ${patente}`;
+        resultado.className = "error";
+        return;
+      }
+
+      const ahora = new Date();
+      const diferenciaMs = ahora - vehiculo.horaIngreso;
+      const horas = diferenciaMs / (1000 * 60 * 60);
+      const costo = horas > 2 ? 2000 : 1500;
+
+      resultado.innerText = `Patente ${patente}:\n- Ingresó: ${vehiculo.horaIngreso.toLocaleTimeString()}\n- Tiempo: ${horas.toFixed(2)} horas\n- A pagar: $${costo}`;
+      resultado.className = "";
+    }
+
+    function finalizarDia() {
+      const total = vehiculos.reduce((suma, v) => suma + (v.monto || 0), 0);
+      document.getElementById("totalDia").innerText = `Total del día: $${total}`;
+    }
+  </script>
+</body>
+</html>
