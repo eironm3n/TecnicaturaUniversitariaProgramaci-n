@@ -1,0 +1,6 @@
+
+
+Agregar en la función aleatoria() para que la PC elija su personaje y muestre su nombre, esta la pueden mostrar en el Zoom, 
+debería estar lista, todo se debe mostrar de manera grupal, también voy a estar esperando la ejecución del 
+algoritmo: El Salto del caballo en JS
+
