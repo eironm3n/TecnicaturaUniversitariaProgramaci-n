@@ -17,7 +17,7 @@ public class CalculadoraUTN {
                 4. Division
                 5. Salir
                 """);
-        System.out.print("Operacion a realizar ?");
+        System.out.print("¿Operacion a realizar? --> ");
         var operacion = Integer.parseInt(entrada.nextLine());
 
         if(operacion >= 1 && operacion <= 4){
@@ -25,7 +25,34 @@ public class CalculadoraUTN {
             var operando1 = Integer.parseInt(entrada.nextLine());
             System.out.println("Digite el valor para el operando2: ");
             var operando2 = Integer.parseInt(entrada.nextLine());;
-        }
 
-    }
-}
+            //Generamos un switch para las opciones brindadas
+            int resultado;
+            switch (operacion){
+                case 1 -> {
+                    resultado = operando1 + operando2;
+                    System.out.println("Resultado de la suma: " + resultado);
+                }
+                case 2 -> {
+                    resultado = operando1 - operando2;
+                    System.out.println("Resultado de la resta: " + resultado);
+                }
+                case 3 -> {
+                    resultado = operando1 * operando2;
+                    System.out.println("Resultado de la multiplicacion: " + resultado);
+                }
+                case 4 -> {
+                    resultado = operando1 / operando2;
+                    System.out.println("Resultado de la division: " + resultado);
+                }
+                default -> System.out.println("Opcion erronea" + operacion);
+            }   //Fin switch
+        }   //Fin del IF
+        else if (operacion == 5) {
+            System.out.println("Hasta pronto...");
+        }
+        else {
+            System.out.println("Opcion erronea: "+operacion);
+        }
+    }   //Fin main
+}   //Fin clase
