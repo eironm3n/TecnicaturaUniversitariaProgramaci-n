@@ -47,12 +47,12 @@ public class CalculadoraUTN {
 
     public static void ejecutarOperacion(int operacion, Scanner entrada) {
         System.out.println("Digite el valor para el operando1: ");
-        var operando1 = Integer.parseInt(entrada.nextLine());
+        var operando1 = Double.parseDouble(entrada.nextLine());
         System.out.println("Digite el valor para el operando2: ");
-        var operando2 = Integer.parseInt(entrada.nextLine());
+        var operando2 = Double.parseDouble(entrada.nextLine());
 
         //Generamos un switch para las opciones brindadas
-        int resultado;
+        double resultado;
         switch (operacion) {
             case 1 -> {
                 resultado = operando1 + operando2;
