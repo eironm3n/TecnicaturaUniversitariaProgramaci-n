@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Estacionamiento</title>
+  <link rel="stylesheet" href="../static/styles.css" />
+</head>
+<body>
+  <div id="fondo">
+    <!-- FORMULARIO -->
+    <section id="valores">
+      <div class="bloque">
+        <label>Patente</label>
+        <input id="patente" maxlength="12" placeholder="12 caracteres" />
+        <label>Sector</label>
+        <select id="sector">
+          <option value="">Sector…</option>
+          <option>Sector 1</option><option>Sector 2</option>
+          <option>Sector 3</option><option>Sector 4</option>
+        </select>
+        <label>$/Hora</label>
+        <input id="precioHora" type="number" min="1" value="{{ tarifa }}" />
+      </div>
+      <div class="bloque">
+        <label>Tiempo est.</label><input id="tiempoEstimado" readonly />
+        <label>Ingreso</label><input id="ingreso" readonly />
+        <label>Egreso</label><input id="egreso" readonly />
+        <button id="btnRegistrar">Registrar</button>
+      </div>
+    </section>
+
+    <!-- TABLA -->
+    <section id="tabla">
+      <table>
+        <thead>
+          <tr>
+            <th>Patente</th><th>Sector</th><th>Ingreso</th><th>Egreso</th><th>Tiempo</th><th>Total / Acción</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </section>
+  </div>
+<script src="../static/main.js"></script>
+</body>
+</html>
