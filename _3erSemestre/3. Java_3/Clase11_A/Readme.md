@@ -1,3 +1,5 @@
+## Practicas realizadas con MySQL de la clase 11A de Java3
+
 1. Se realiza la descarga e instalación de MySQL, y se instala la versión Comunnity.
 2. Se realiza la instalación y se ingresa a la base de prueba creada, le asignamos el nombre "Estudiantes"
 CREATE SCHEMA `estudiantes` ;
@@ -13,4 +15,4 @@ ADD COLUMN `telefono` VARCHAR(45) NULL AFTER `apellido`,
 ADD COLUMN `email` VARCHAR(45) NULL AFTER `telefono`;
 5. Luego iremos a la opción "Select Rows - Limit 1000"
 SELECT * FROM estudiantes.estudiantes2025;
-6.
+6. Se crea el archivo practica.txt y se continua allí
