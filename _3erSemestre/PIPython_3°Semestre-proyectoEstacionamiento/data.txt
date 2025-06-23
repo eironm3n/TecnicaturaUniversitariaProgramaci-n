@@ -1,0 +1,116 @@
+1. Creación y estructura del proyecto (flask, swagger, sqlite, patron MVC)
+2. Conectarse a la DB, creacion de esta y uso de ORM
+3. Que es MVC, explicar endpoints general.
+4. Validaciones
+5. Creacion de rutas dinámicas
+6. Swagger para mostrar como funciona el backend y que es swagger
+7. Explica el front
+8. Muestra la aplicación funcionando y muestra casos de prueba
+======================================================================
+/proyecto_estacionamiento
+│
+├── app/
+│	├── __pychache__/
+│	│	└── __init__.cpython-311.pyc
+│	│
+│	├── db/
+│	│	├── __pychache__/
+│	│	│	└── database.cpython-311.pyc
+│	│	└── database.py
+│	│	
+│	├── front_end/
+│	│	├── static/
+│	│	│	├── script.js
+│	│	│	└── style.css
+│	│	│
+│	│	└── templates/
+│	│		└──index.html
+│	│
+│	├── modules/
+│	│	└── patentes/
+│	│		├── __pychache__/
+│	│		│	└── __init__.cpython-311.pyc
+│	│		└──	controllers
+│	│			├── __pychache__/
+│	│			│	└── patente_controller.cpython-311.pyc
+│	│			├── utils/
+│	│			│	├── __pychache__/
+│	│			│	│	├──models.cpython-311.pyc
+│	│			│	│	├──serialize_patente.cpython-311.pyc
+│	│			│	│	└──validators.cpython-311.pyc
+│	│			│	├── models.py
+│	│			│	├── serialize_patente.py
+│	│			│	└── validators.py
+│	│			└── patente_controller.py
+│	│		├──	models/
+│	│		│	├── __pychache__/
+│	│		│	│	└── patente_model.cpython-311.pyc
+│	│		│	└── patente_model.py
+│	│		├── repositories/
+│	│		│	├── __pychache__/
+│	│		│	│	└── patente_repository.cpython-311.pyc
+│	│		│	└── patente_repository.py
+│	│		├── services/
+│	│		│	├── __pychache__/
+│	│		│	│	└── patente_service.cpython-311.pyc
+│	│		│	└── patente_service.py
+│	│		└──__init__.py
+│	│
+│	├── router/
+│	│	├── __pychache__/
+│	│	│	└── __init__.cpython-311.pyc
+│	│	│
+│	│	└── __init__.py
+│	│
+│	└── utils/
+│		├── __pychache__/
+│		│	├── controller_loader.cpython-311.pyc
+│		│	└── register_namespace.cpython-311.pyc
+│		│
+│		├── controller_loader.py
+│		└── register_namespace.py
+│
+│
+├── .env
+├── .gitignore
+├── README.md
+├── requirements.txt
+└── run.py
+======================================================================
+
+🎙️ Guion – Explicación del Frontend (Aron Rojas – Código Enigma)
+
+[Inicio del video – pantalla completa de la app, enfocando primero en la interfaz visual general]
+
+📢 “Hola, soy Aron Rojas y soy parte del grupo Código Enigma. Yo les voy a comentar sobre cómo construimos el frontend de esta aplicación web de gestión de estacionamiento.”
+
+[Vista general de la app con el reloj en funcionamiento]
+
+🖥️ “El frontend está desarrollado completamente con HTML, CSS y JavaScript puro. Se buscó una interfaz simple, clara y funcional, que permita al usuario operar sin distracciones ni complicaciones.”
+
+🕒 “Por ejemplo, el reloj en la parte superior se actualiza automáticamente cada segundo usando JavaScript, ayudando a los operadores a tener control preciso del tiempo.”
+
+[Mostrar sección de ingreso de datos]
+
+📋 “En la parte central tenemos el formulario para el ingreso de patentes. Desde acá el usuario puede ingresar la patente, el precio por hora y luego realizar operaciones básicas como agregar, actualizar, eliminar o cobrar.”
+
+🧠 “Esta sección se conecta al backend mediante fetch, consumiendo los endpoints RESTful ya implementados en Flask. Las validaciones que se hacen del lado del servidor también se reflejan acá, mostrando mensajes claros al usuario si algo sale mal.”
+
+[Mostrar tabla de patentes activas y patentes cobradas]
+
+📊 “Las patentes ingresadas se muestran automáticamente en esta tabla, que se genera dinámicamente en JavaScript. También se puede seleccionar una fila para habilitar las acciones de edición o cobro.”
+
+💸 “Al cobrar una patente, los datos pasan a la tabla inferior, donde se almacenan las patentes ya cobradas, junto con el total recaudado.”
+
+[Mostrar indicador de conexión con el servidor]
+
+🔌 “En la esquina inferior vemos un indicador que nos dice si el backend está funcionando. Si Flask está activo, se pone en verde; si no, aparece en rojo. Esto se actualiza con peticiones periódicas al servidor.”
+
+[Cierre con vista general de la app]
+
+🧩 “En resumen, el frontend se diseñó para que sea liviano, directo y altamente funcional. Todo se actualiza en tiempo real sin recargar la página, y cada acción está conectada con una ruta del backend previamente definida.”
+
+🙌 “Ahora, para cerrar, les muestro brevemente la aplicación funcionando con algunos casos de prueba.”
+
+✅ [A partir de acá podés hacer una demo en pantalla, probando agregar, editar, cobrar una patente, y mostrar la reacción de la interfaz.]
+
