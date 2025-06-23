@@ -7,7 +7,7 @@ SELECT * FROM estudiantes2025;
 INSERT INTO estudiantes2025 (nombre, apellido, telefono, email) VALUES ("Juan","Perez","261787899","jperez@mail.com");
 
 -- Actualizar estudiante
-UPDATE estudiantes2025 SET nombre="Juan Carlos", apellido="GARCIA" WHERE idestudiantes2025=1 ;
+UPDATE estudiantes2025 SET nombre="Juan Carlos", apellido="GARCIA" WHERE idestudiantes2025=1;
 
 -- Eliminar estudiante
 DELETE FROM estudiantes2025 WHERE idestudiantes2025=1;
@@ -16,3 +16,4 @@ DELETE FROM estudiantes2025 WHERE idestudiantes2025=1;
 ALTER TABLE estudiantes2025 AUTO_INCREMENT=1;
 -- Revisar comando por que no ejecuta
 
+-- Se continua con IntelliJ
