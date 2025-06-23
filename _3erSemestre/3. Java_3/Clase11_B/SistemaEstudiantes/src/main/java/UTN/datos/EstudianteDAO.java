@@ -20,7 +20,7 @@ public class EstudianteDAO {
 
         // Creamos un objeto de tipo conexión
         Connection con = getConnection();
-        String sql = "SELECT * FROM estudiantes ORDER BY idestudiantes2025";
+        String sql = "SELECT * FROM estudiantes2025 ORDER BY idestudiantes2025";
         try{
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -59,13 +59,3 @@ public class EstudianteDAO {
         estudiantes.forEach(System.out::println);   //Funcion lambda para imprimir
     }
 }
-/*
-*Salida de esta reproducción
-* Listado de estudiantes:
-* Ocurrio un error al seleccionar datos: Table 'estudiantes.estudiantes' doesn't exist
-*
-* Process finished with exit code 0
-*
-*
-* REVISAR Y CONTINUAR, PARTE 6 DE LA CLASEE 11-B
-* */
