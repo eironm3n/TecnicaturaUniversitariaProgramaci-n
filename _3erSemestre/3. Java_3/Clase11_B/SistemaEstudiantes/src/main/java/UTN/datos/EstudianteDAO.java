@@ -11,7 +11,7 @@ import java.util.List;
 
 public class EstudianteDAO {
     // Metodo Listar
-    public List<Estudiante> listar(){
+    public List<Estudiante> listarEstudiantes(){
         List<Estudiante> estudiantes = new ArrayList<>();
 
         //Creamos algunos objetos que son necesarios para comunicarnos con la base de datos
@@ -20,7 +20,7 @@ public class EstudianteDAO {
 
         // Creamos un objeto de tipo conexión
         Connection con = getConnection();
-        String sql = "SELECT * FROM estudiantes ORDER BY estudiantes2025";
+        String sql = "SELECT * FROM estudiantes ORDER BY idestudiantes2025";
         try{
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -44,10 +44,28 @@ public class EstudianteDAO {
                 con.close();
             }
             catch (Exception e){
-                System.out.println("Ocurrio un error al cerra la conexion: "+e.getMessage());
+                System.out.println("Ocurrio un error al cerrar la conexion: "+e.getMessage());
             }
         }   //Fin finally
 
         return estudiantes;
     }   //Fin metodo Listar
+
+    public static void main(String[] args){
+        //Listar los estudiantes
+        var estudianteDao = new EstudianteDAO();
+        System.out.println("Listado de estudiantes: ");
+        List<Estudiante> estudiantes = estudianteDao.listarEstudiantes();
+        estudiantes.forEach(System.out::println);   //Funcion lambda para imprimir
+    }
 }
+/*
+*Salida de esta reproducción
+* Listado de estudiantes:
+* Ocurrio un error al seleccionar datos: Table 'estudiantes.estudiantes' doesn't exist
+*
+* Process finished with exit code 0
+*
+*
+* REVISAR Y CONTINUAR, PARTE 6 DE LA CLASEE 11-B
+* */

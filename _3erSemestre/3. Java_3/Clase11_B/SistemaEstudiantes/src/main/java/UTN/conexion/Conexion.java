@@ -16,7 +16,7 @@ public class Conexion {
         Connection conexion = null;
 
         //Variables para conectarnos a la base de datos
-        var baseDatos = "estudiantes2025";
+        var baseDatos = "estudiantes";
         var url = "jdbc:mysql://localhost:3306/"+baseDatos;
         //Esta es la url
         var usuario = "root";
