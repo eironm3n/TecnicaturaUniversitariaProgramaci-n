@@ -15,4 +15,4 @@ ADD COLUMN `telefono` VARCHAR(45) NULL AFTER `apellido`,
 ADD COLUMN `email` VARCHAR(45) NULL AFTER `telefono`;
 5. Luego iremos a la opción "Select Rows - Limit 1000"
 SELECT * FROM estudiantes.estudiantes2025;
-6. Se crea el archivo scriptsEjecutados.sql y se continua allí
+6. Se almacenan los scripts practicados dentro de MySQL Workbench y se crea el archivo scriptsEjecutados.sql y se dejan los comentarios allí
