@@ -119,3 +119,30 @@
             Email: promero@mail.com
         
 08:06:01 PM:DEBUG [persona_dao.py:53] Personas insertadas: 1
+08:08:04 PM:DEBUG [conexion.py:28] Conexión Exitosa: <connection object at 0x000001625CC4E8A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+08:08:04 PM:DEBUG [conexion.py:41] Se abrio correctamente el cursor: <cursor object at 0x000001625CDCC3C0; closed: 0>
+08:08:04 PM:DEBUG [persona_dao.py:45] Persona Insertada: 
+            ID Persona: None,
+            Nombre: Supa,
+            Apellido: Dumacaco,
+            Email: promero@mail.com
+        
+08:08:04 PM:DEBUG [persona_dao.py:53] Personas insertadas: 1
+08:14:42 PM:DEBUG [conexion.py:28] Conexión Exitosa: <connection object at 0x0000023F75A4E8A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+08:14:42 PM:DEBUG [conexion.py:41] Se abrio correctamente el cursor: <cursor object at 0x0000023F75BCC3C0; closed: 0>
+08:14:42 PM:DEBUG [persona_dao.py:54] Persona Actualizada: 
+            ID Persona: 1,
+            Nombre: Homero,
+            Apellido: Ramos,
+            Email: promero@mail.com
+        
+08:14:42 PM:DEBUG [persona_dao.py:62] Personas actualizadas: 1
+08:19:15 PM:DEBUG [conexion.py:28] Conexión Exitosa: <connection object at 0x000002813504E8A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+08:19:15 PM:DEBUG [conexion.py:41] Se abrio correctamente el cursor: <cursor object at 0x00000281351CC3C0; closed: 0>
+08:19:15 PM:DEBUG [persona_dao.py:63] Los objetos eliminados son: 
+            ID Persona: 1,
+            Nombre: None,
+            Apellido: None,
+            Email: None
+        
+08:19:15 PM:DEBUG [persona_dao.py:71] Resgistro de persona eliminada: 1
