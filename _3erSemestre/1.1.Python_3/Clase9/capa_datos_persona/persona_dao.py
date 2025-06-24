@@ -1,18 +1,20 @@
 """
+Se continua con la Clase 9 tomando los datos de la Clase 8
 DAO = Data Access Object
-
 CRUD = 
     Create -> Insertar
     Read -> Seleccionar
     Update  -> Actualizar
     Delete  -> Eliminar
-
-    Se continua con la Clase 9 y lo visto en la Clase 8
 """
-
-
+"""
+Este import contenia errores, se deja como aprendizaje:
 from Clase9.capa_datos_persona import Persona
 from Clase9.capa_datos_persona.conexion import Conexion
+from logger_base import log
+"""
+from Persona import Persona
+from conexion import Conexion
 from logger_base import log
 
 class PersonaDAO:
@@ -34,7 +36,23 @@ class PersonaDAO:
                     personas.append(persona)
                 return personas
 
+    @classmethod
+    def insertar(cls,persona):
+        with Conexion.obtenerConexion():
+            with Conexion.obtenerCursor() as cursor:
+                valores = (persona.nombre, persona.apellido, persona.email)
+                cursor.execute(cls._INSERTAR,valores)
+                log.debug(f'Persona Insertada: {persona}')
+                return cursor.rowcount
+            
+
 if __name__=='__main__':
+    # Insertar registro
+    persona1 = Persona(nombre='Pedro',apellido='Romero',email='promero@mail.com')
+    personas_insertadas = PersonaDAO.insertar(persona1)
+    log.debug(f'Personas insertadas: {personas_insertadas}')
+
+    # Seleccionar objetos
     personas = PersonaDAO.seleccionar()
     for persona in personas:
         log.debug(persona)
