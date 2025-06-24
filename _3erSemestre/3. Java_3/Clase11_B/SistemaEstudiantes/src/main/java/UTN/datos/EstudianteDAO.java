@@ -69,7 +69,18 @@ public class EstudianteDAO {
                 return true;    //se encontro un registro
             }
         }
-        catch ()
+        catch (Exception e){
+            System.out.println("Ocurrio un error al buscar estudiante: "+e.getMessage());
+        }
+        finally {
+            try{
+                con.close();
+            }
+            catch (Exception e){
+                System.out.println("Ocurrio un error al cerrar la conexion: "+e.getMessage());
+            }// Fin catch
+
+        }// Fin finally
     }
 
     public static void main(String[] args){
