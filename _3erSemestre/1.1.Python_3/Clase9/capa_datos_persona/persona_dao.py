@@ -65,10 +65,12 @@ class PersonaDAO:
 
 if __name__=='__main__':
 
+    """
     #Eliminar un registro
     persona1 = Persona(id_persona=1)
     personas_eliminadas = PersonaDAO.eliminar(persona1)
     log.debug(f'Resgistro de persona eliminada: {personas_eliminadas}')
+    """
 
     """
     #Actualizar un registro
@@ -88,3 +90,5 @@ if __name__=='__main__':
     personas = PersonaDAO.seleccionar()
     for persona in personas:
         log.debug(persona)
+    # puede llegar a generar conflictos en los otros metodos debido a que hay mas de un metodo en el mismo
+    # al comentar el codigo de los otros metodos, no surgen inconvenientes.-
