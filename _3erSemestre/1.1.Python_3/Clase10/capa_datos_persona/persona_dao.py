@@ -1,5 +1,5 @@
 """
-Se toma lo iniciado de la clase 8 y 9. Esta es la Clase10
+Se toma lo iniciado de la clase 8 y 9. Esta es la Clase10 - Pool de conexiones
 DAO = Data Access Object
 CRUD = 
     Create-> Insertar

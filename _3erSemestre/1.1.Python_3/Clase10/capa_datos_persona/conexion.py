@@ -1,9 +1,11 @@
 """
 Atributos de clase
 Se toma lo iniciado de la clase 8 y 9.
-Esta es la Clase10
+Esta es la Clase10 - Pool de conexiones
 """
-import psycopg2 as bd
+# import psycopg2 as bd
+from psycopg2 import pool
+# para traer el pool de psycopg2
 from logger_base import *
 import sys
 
@@ -13,8 +15,9 @@ class Conexion:
     _PASSWORD = 'admin'
     _DB_PORT = 5432
     _HOST = '127.0.0.1'
-    _conexion = None
-    _cursor = None
+    _MIN_CON = 1
+    _MAX_CON = 5
+    _pool = None
 
 
     @classmethod
@@ -57,3 +60,9 @@ if __name__ == '__main__':
     Conexion.obtenerConexion()
     Conexion.obtenerCursor()
     """
+
+    @classmethod
+    def obtenerPool(cls):
+        if cls._pool is None:
+            try:
+                cls._pool = pool.SimpleConnectionPool()
