@@ -19,6 +19,8 @@ class Conexion:
 
     @classmethod
     def obtenerConexion(cls):
+        pass
+    """
         if cls._conexion is None:
             try:
                 cls._conexion = bd.connect(host=cls._HOST,
@@ -34,9 +36,12 @@ class Conexion:
                 sys.exit()
         else:
             return cls._conexion
-
+    """
+    
     @classmethod
     def obtenerCursor(cls):
+        pass
+    """
         if cls._cursor is None:
             try:
                 cls._cursor = cls.obtenerConexion().cursor()
@@ -51,4 +56,4 @@ class Conexion:
 if __name__ == '__main__':
     Conexion.obtenerConexion()
     Conexion.obtenerCursor()
-
+    """
