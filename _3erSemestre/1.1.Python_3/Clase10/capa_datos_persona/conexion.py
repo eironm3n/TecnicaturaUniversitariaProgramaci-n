@@ -23,7 +23,8 @@ class Conexion:
     @classmethod
     def obtenerConexion(cls):
         conexion = cls.obtenerPool().getconn()
-        
+        log.debug(f'Conexión obtenida del pool: {conexion}')
+        return conexion
 
     
     @classmethod
