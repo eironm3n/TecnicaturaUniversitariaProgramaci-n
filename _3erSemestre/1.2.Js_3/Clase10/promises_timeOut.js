@@ -25,8 +25,8 @@ miPromesa
     .catch(error=>console.log(error)));
 */
 
-let promesa = new Promise( (Resolver) => {
-    setTimeout( () => Resolver('Saludos desde promesa, callback, y setTimeOut'),3000);
+let promesa = new Promise( (resolver) => {
+    setTimeout( () => resolver('Saludos desde promesa, callback, y setTimeOut'),3000);
 });
 
 //El llamado a la promesa
