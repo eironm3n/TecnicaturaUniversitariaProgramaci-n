@@ -29,4 +29,3 @@ if __name__=='__main__':
         log.debug('Estamos dentro del bloque with')
         cursor.execute('SELECT * FROM persona')
         log.debug(cursor.fetchall())
-        
