@@ -155,10 +155,3 @@ section .color:nth-child(3){
 }
 
 
-
-.box .square:nth-child(2) {
-  bottom: -50px;
-  left: -60px;
-  width: 80px;
-  height: 80px;
-}
