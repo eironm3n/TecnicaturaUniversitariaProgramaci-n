@@ -1,0 +1,30 @@
+El algoritmo de las Torres de Hanoi, Este juego tiene sus origenes en la cultura oriental y en una leyenda 
+sobre el templo de Brahma cuya estructura simulaba una plataforma metálica con tres varillas y discos en 
+su interior.
+
+
+El problema en cuestión suponia la existencia de tres varillas (A, B y C) o postes en los que alojaban 
+discos (n discos) que se podían trasladar de una varilla a otra libremente pero con varias 
+condiciones, cada disco era ligeramente inferior en diámetro al que estaba justo debajo de él.
+
+
+
+Las condiciones mas claras: los n discos estarán en la varilla o poste inicial, aquí es donde debemos 
+generar un algoritmo para pasar los discos de la varilla A a la C, pero en el mismo orden por 
+longitud, el disco más grande va debajo y el más pequeño arriba, otra condición es que podemos mover un 
+solo disco a la vez, no se pueden mover dos discos al mismo tiempo y el unico disco que se puede mover 
+es el que esta en la parte superior, de nuestra varilla, esto es como una pila, otra condición es, que 
+no podemos poner un disco más grande arriba de uno más pequeño, siempre el disco más grande va 
+debajo, siguiendo este ejemplo que esta en los gif.
+
+
+
+
+Para completar esto van a necesitar de nuevo trabajar con un algoritmo recursivo.
+
+
+La tarea es, realizar este algoritmo en JavaScript, antes de las 23 horas de la clase de hoy 
+lunes 2 de junio del 2025, según el resultado obtendrán la mejor nota, si me muestran la ejecución 
+el miércoles a través del zoom, será el complemento, ya que necesito ver la ejecución, este trabajo 
+es de manera grupal, me tienen que enviar el enlace del repositorio en la organización en 
+GitHub, se aprueba con la ejecución, es una nota complementada, vamos a codear...
