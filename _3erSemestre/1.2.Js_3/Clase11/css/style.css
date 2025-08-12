@@ -58,11 +58,12 @@ section .color:nth-child(3){
   background: rgba(255,255,255,0.1);
   border-radius: 10px;
   animation: animate 10s ease infinite;
-  animation-delay: calc(-1s * var(--i))
+  
 }
+
 /*animacion caja login*/
 @keyframes animate{
-  0%,100%{
+  0%,80%{
     transform: translateY(-40px);
   }
   50%{
@@ -70,8 +71,8 @@ section .color:nth-child(3){
   }
 }
 .box .square:nth-child(1){
-  top: -50px;
-  right: -60px;
+  top: -250px;
+  right: 100px;
   width: 100px;
   height: 100px;
 }
