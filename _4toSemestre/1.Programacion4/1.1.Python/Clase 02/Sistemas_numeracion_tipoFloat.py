@@ -1,2 +1,0 @@
-# Continuamos con el anterior
-
