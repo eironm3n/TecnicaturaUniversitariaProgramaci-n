@@ -1,19 +1,6 @@
 # Diseño para Developers - Clase 1
 
-## 1. Brief 
-*[Imagen: Ilustración de una persona trabajando con documentos y la definición del Brief]*
-
-El documento "Brief" sirve como la hoja de ruta fundamental para iniciar cualquier proyecto de diseño.
-
-* **Definición:** Es la hoja de ruta para empezar a diseñar.
-* **Secciones principales:**
-   * Descripción de la empresa o cliente
-   * Objetivos o retos
-   * Target o audiencia
-   * Competencia
-   * Distribución
-
-## 2. Proceso de Diseño PCREA 
+## 1. Proceso de Diseño PCREA 
 *[Imagen: Diagrama de flujo con 5 etapas coloridas del proceso PCREA]*
 
 Proceso de diseño estructurado de 5 etapas usando el acrónimo "PCREA", que va desde la concepción hasta la implementación:
@@ -24,7 +11,7 @@ Proceso de diseño estructurado de 5 etapas usando el acrónimo "PCREA", que va 
 * **E - Evaluación:** Criticar, replantear
 * **A - Implementación:** Construir, trabajar
 
-## 3. Diseño Responsivo 
+## 2. Diseño Responsivo 
 *[Imagen: Diagrama conceptual mostrando responsive design, mobile first y los flujos de mejora progresiva vs degradación agraciada]*
 
 Metodología para crear diseños web flexibles y adaptables a diferentes dispositivos y pantallas.
@@ -49,7 +36,7 @@ Partimos de una base sólida, teniendo nuestros elementos básicos y esenciales.
 #### **Degradación Agraciada**
 Partimos de una versión completa que le retiramos mejoras para poder migrar entre las especificaciones de sistema y dispositivo. Recomendable para cuando ya se a realizado el diseño.
 
-## 4. Accesibilidad y Consejos de Diseño 
+## 3. Accesibilidad y Consejos de Diseño 
 *[Imagen: Mapa conceptual con 8 consejos de accesibilidad organizados alrededor del concepto central]*
 
 ### Principio Central:
@@ -72,3 +59,16 @@ Partimos de una versión completa que le retiramos mejoras para poder migrar ent
 7. **Escribe contenido descriptivo que pueda reemplazar videos e imágenes.**
 
 8. **Garantiza que las animaciones no bloqueen el acceso al contenido.** Priorizar que la funcionalidad de la página no se vea afectado por algún implemento de diseño.
+
+## 4. Brief 
+![Imagen: Ilustración de una persona trabajando con documentos y la definición del Brief](img/4.%20Brief.png.png)
+
+El documento "Brief" sirve como la hoja de ruta fundamental para iniciar cualquier proyecto de diseño.
+
+* **Definición:** Es la hoja de ruta para empezar a diseñar.
+* **Secciones principales:**
+   * Descripción de la empresa o cliente
+   * Objetivos o retos
+   * Target o audiencia
+   * Competencia
+   * Distribución
