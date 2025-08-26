@@ -1,7 +1,7 @@
 # Diseño para Developers - Clase 1
 
 ## 1. Proceso de Diseño PCREA 
-*[Imagen: Diagrama de flujo con 5 etapas coloridas del proceso PCREA]*
+![Imagen: Diagrama de flujo con 5 etapas coloridas del proceso PCREA](img/1.%20PCREA.png)
 
 Proceso de diseño estructurado de 5 etapas usando el acrónimo "PCREA", que va desde la concepción hasta la implementación:
 
@@ -12,7 +12,7 @@ Proceso de diseño estructurado de 5 etapas usando el acrónimo "PCREA", que va 
 * **A - Implementación:** Construir, trabajar
 
 ## 2. Diseño Responsivo 
-*[Imagen: Diagrama conceptual mostrando responsive design, mobile first y los flujos de mejora progresiva vs degradación agraciada]*
+![Imagen: Diagrama conceptual mostrando responsive design, mobile first y los flujos de mejora progresiva vs degradación agraciada](img/2.%20DiseñoResponsivo.png)
 
 Metodología para crear diseños web flexibles y adaptables a diferentes dispositivos y pantallas.
 
@@ -37,7 +37,7 @@ Partimos de una base sólida, teniendo nuestros elementos básicos y esenciales.
 Partimos de una versión completa que le retiramos mejoras para poder migrar entre las especificaciones de sistema y dispositivo. Recomendable para cuando ya se a realizado el diseño.
 
 ## 3. Accesibilidad y Consejos de Diseño 
-*[Imagen: Mapa conceptual con 8 consejos de accesibilidad organizados alrededor del concepto central]*
+![Imagen: Mapa conceptual con 8 consejos de accesibilidad organizados alrededor del concepto central](img/3.%20AccesibilidadDiseño.png)
 
 ### Principio Central:
 **La accesibilidad en el diseño te asegura el acceso a todas las personas sin importar alguna discapacidad esencial.**
