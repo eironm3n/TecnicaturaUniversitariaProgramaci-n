@@ -186,12 +186,6 @@ Las decisiones de diseño deben validarse con usuarios reales:
 - **Miro**: Mapas mentales y flujos
 - **UsabilityHub**: Testing remoto
 
-## Ejercicio Práctico
+## Ejemplo de formato
 
-Crea una paleta de color para una aplicación de delivery de comida:
-1. Define la personalidad de la marca
-2. Selecciona colores primario, secundario y de acento
-3. Verifica la accesibilidad de los contrastes
-4. Documenta las razones psicológicas de tu elección
-
-*[Imagen: Ejemplo de aplicación de delivery con paleta de colores coherente]*
+![Imagen: Ejemplo de aplicación de delivery con paleta de colores coherente](img/5.%20Ejemplo.jpg)
