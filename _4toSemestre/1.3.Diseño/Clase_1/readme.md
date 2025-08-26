@@ -61,7 +61,7 @@ Partimos de una versión completa que le retiramos mejoras para poder migrar ent
 8. **Garantiza que las animaciones no bloqueen el acceso al contenido.** Priorizar que la funcionalidad de la página no se vea afectado por algún implemento de diseño.
 
 ## 4. Brief 
-![Imagen: Ilustración de una persona trabajando con documentos y la definición del Brief](img/4.%20Brief.png.png)
+![Imagen: Ilustración de una persona trabajando con documentos y la definición del Brief](img/4.Brief.png)
 
 El documento "Brief" sirve como la hoja de ruta fundamental para iniciar cualquier proyecto de diseño.
 
