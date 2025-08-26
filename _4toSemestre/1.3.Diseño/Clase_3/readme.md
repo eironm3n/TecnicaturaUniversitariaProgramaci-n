@@ -22,7 +22,7 @@ Un style guide es una página de muestra donde tenemos nuestros componentes y ti
 - Facilita el mantenimiento del código
 - Mejora la colaboración entre diseñadores y developers
 
-*[Espacio para imagen: Ejemplo de style guide con componentes]*
+![Espacio para imagen: Ejemplo de style guide con componentes](img/2.%20Grillas%20&%20StyleGuide.png)
 
 ## Sistemas de Temas y Personalización
 
@@ -32,7 +32,7 @@ Los themes son una capa de color y estilos que se añade por encima de nuestra a
 ### Implementación de Themes
 Para tener varios themes, se crea un archivo de CSS por cada theme, pudiéndose intercambiar una por otra desde un archivo donde se configuran todos los archivos importados, sin tener que cambiar toda la programación de la aplicación. Simplemente con cambiar el nombre de un archivo por otro se realiza el cambio de theme.
 
-*[Espacio para imagen: Comparación visual de diferentes themes]*
+![Espacio para imagen: Comparación visual de diferentes themes](img/3.%20Themes.png)
 
 ## Gestión de Imágenes y Recursos Visuales
 
@@ -60,7 +60,8 @@ Para tener varios themes, se crea un archivo de CSS por cada theme, pudiéndose 
 - **Limitación:** No recomendadas para animaciones de larga duración por ser muy pesadas
 - **Alternativas:** Considera usar CSS animations o SVG animado
 
-*[Espacio para imagen: Comparación visual de formatos SVG, JPG, PNG y GIF]*
+![Espacio para imagen: Comparación visual de formatos SVG, JPG, PNG y GIF](img/4.%20imagenesweb.png)
+![Segunda imagen correlativa](img/5.%20imagenesweb.png)
 
 ### Consejos para Optimización de Imágenes
 
@@ -77,7 +78,6 @@ Para tener varios themes, se crea un archivo de CSS por cada theme, pudiéndose 
 - Utiliza la función "alt text" si la imagen tiene un fin comunicativo
 - Optimiza el peso de archivo sin comprometer la calidad
 
-*[Espacio para imagen: Ejemplo de optimización de imágenes]*
 
 ## Animaciones y Elementos en Movimiento
 
@@ -112,7 +112,7 @@ Para tener varios themes, se crea un archivo de CSS por cada theme, pudiéndose 
 - Si tus animaciones aportan al contenido añade transcripciones
 - Elige animaciones que aporten al contenido
 
-*[Espacio para imagen: Ejemplos de diferentes tipos de animaciones web]*
+![Espacio para imagen: Ejemplos de diferentes tipos de animaciones web](img/6.%20graficosEnMovimiento.png)
 
 ## Tipografía en el Diseño Web
 
@@ -133,7 +133,7 @@ Para tener varios themes, se crea un archivo de CSS por cada theme, pudiéndose 
 - **Uso recomendado:** Logos, títulos e invitaciones y para textos cortos
 - **Ejemplos:** Lobster, Brush, Great Vibes, Edwardian
 
-*[Espacio para imagen: Ejemplos visuales de diferentes tipos de fuentes]*
+![Espacio para imagen: Ejemplos visuales de diferentes tipos de fuentes]()
 
 ### Psicología de la Tipografía
 
@@ -164,7 +164,7 @@ La elección tipográfica comunica mucho más que palabras. Cada tipo de fuente 
 - **Quién las usa:** Marcas dirigidas a público joven, entretenimiento
 - **Ejemplos de marcas:** Disney, marcas de entretenimiento
 
-*[Espacio para imagen: Infografía de psicología de la tipografía]*
+![Espacio para imagen: Infografía de psicología de la tipografía](img/1.%20La%20psicología%20de%20la%20tipografía.jpg)
 
 ### Mejores Prácticas Tipográficas
 
@@ -177,26 +177,4 @@ La elección tipográfica comunica mucho más que palabras. Cada tipo de fuente 
 - Contraste adecuado
 - Evitar usar animaciones intermitentes
 
-## Conclusión
-
-En esta clase hemos cubierto los fundamentos esenciales del diseño web para developers: desde sistemas de layout y themes hasta la gestión optimizada de imágenes, animaciones efectivas y la importancia de una tipografía bien seleccionada. Estos elementos son las herramientas básicas que todo developer debe manejar para crear interfaces funcionales, accesibles y visualmente atractivas.
-
-*[Espacio para imagen: Resumen visual de todos los conceptos de la clase]*
-
----
-
-## Recursos Adicionales
-
-- Documentación de CSS Grid
-- Herramientas de optimización de imágenes  
-- Bibliotecas de animaciones CSS
-- Catálogos de fuentes web
-- Guías de accesibilidad web
-
-## Ejercicios Prácticos
-
-1. Crear un sistema de grillas responsivo
-2. Implementar un sistema de themes básico
-3. Optimizar un conjunto de imágenes para web
-4. Desarrollar una animación CSS sencilla
-5. Crear una jerarquía tipográfica para un proyecto
+![Espacio para imagen: Resumen visual de todos los conceptos de la clase](img/7.%20Repaso.png)
