@@ -1,5 +1,5 @@
 import pygame
-import os # proporciona funcionalidades para interactuar con el sistema
+import os  # proporciona funcionalidades para interactuar con el sistema
 from constantes import ASSETS_PATH
 
 class Personaje:
@@ -16,7 +16,7 @@ class Personaje:
         self.shape.y += dy
 
     def lanzar_laser(self):
-        laser = laser(self.shape.centerx, self.shape.top)
+        laser = Laser(self.shape.centerx, self.shape.top)
         self.lasers.append(laser)
 
     def recibir_dano(self):
@@ -35,7 +35,7 @@ class Personaje:
         # Dibujar la barra de energía
         pygame.draw.rect(screen, (255, 0, 0), (10, 10, 100, 10))  # Barra de fondo
         pygame.draw.rect(screen, (0, 255, 0), (10, 10, self.energia, 10))  # Barra de energía
-    
+
 class Enemigo:
     def __init__(self, x, y):
         # Construye la ruta completa a la imagen del enemigo
@@ -56,11 +56,10 @@ class Laser:
         self.rect = self.image.get_rect(center=(x, y))
 
     def mover(self):
-        self.rect.y -= 5  # Velocidad del láser
-        
+        self.rect.y -= 10  # Velocidad del láser
+
     def dibujar(self, screen):
         screen.blit(self.image, self.rect.topleft)
-
 
 class Explosion:
     def __init__(self, x, y):

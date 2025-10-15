@@ -5,12 +5,12 @@ from constantes import ASSETS_PATH
 class Explosion:
     def __init__(self, x, y):
         # Construye la ruta completa a las imágenes de la explosión
-        self.images = [pygame.image.load(os.path.join(ASSETS_PATH, 'images', f'regularExplosion0{i:2}.png')) for i in range(9)]
+        self.images = [pygame.image.load(os.path.join(ASSETS_PATH, 'images', f'regularExplosion0{i:02d}.png')) for i in range(9)]
         self.index = 0
         self.image = self.images[self.index]
         self.rect = self.image.get_rect(center=(x, y))
-        self.frame_rate = 0 # contador de los frames de la animacion
-        self.max_frames = 20    #frases de la animacion
+        self.frame_rate = 0
+        self.max_frames = 20
 
     def actualizar(self):
         # Actualiza la animación
@@ -26,4 +26,3 @@ class Explosion:
     def dibujar(self, screen):
         # Dibuja la imagen en la pantalla
         screen.blit(self.image, self.rect.topleft)
-
