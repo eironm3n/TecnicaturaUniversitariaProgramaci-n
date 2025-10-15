@@ -2,7 +2,7 @@ import pygame
 import sys
 import random
 import os
-from personajes import Personaje , Enemigo , Explosion
+from personaje import Personaje , Enemigo , Explosion
 from constantes import SCREEN_WIDTH , SCREEN_HEIGHT , ASSETS_PATH
 
 
@@ -110,44 +110,83 @@ def main() :
             if enemigo.rect.top > SCREEN_HEIGHT :
                 enemigos.remove ( enemigo )
 
-            # Verificar colisiones con láseres
-            for laser in personaje.lasers [ : ] :  # Iterar sobre una copia para eliminar de la lista original
-                if enemigo.rect.colliderect ( laser.rect ) :
-                    explosiones.append ( Explosion ( enemigo.rect.centerx , enemigo.rect.centery ) )
-                    enemigos.remove ( enemigo )  # Eliminar el enemigo
-                    personaje.lasers.remove ( laser )  # Eliminar el láser
-                    sonido_explosion.play ( )
-                    puntos += 10  # Incrementar el puntajeos
-                    break  # Salir del bucle para evitar errores
+        # Verificar colisiones con láseres
+        for laser in personaje.lasers [ : ] :  # Iterar sobre una copia para eliminar de la lista original
+            if enemigo.rect.colliderect ( laser.rect ) :
+                explosiones.append ( Explosion ( enemigo.rect.centerx , enemigo.rect.centery ) )
+                enemigos.remove ( enemigo )  # Eliminar el enemigo
+                personaje.lasers.remove ( laser )  # Eliminar el láser
+                sonido_explosion.play ( )
+                puntos += 10  # Incrementar el puntajeos
+                break  # Salir del bucle para evitar errores
+        if enemigo.rect.colliderect ( personaje.shape ) :
+            if not personaje.recibir_dano ( ) :
+                running = False  # Terminar el juego si la energía llega a 0
+        # Generar enemigos aleatoriamente
+        if random.random ( ) < 0.02 :
+            x = random.randint ( 0 , SCREEN_WIDTH - 50 )  # Asegúrate de que el enemigo esté dentro de la pantalla
+            enemigo = Enemigo ( x , 0 )
+            enemigos.append ( enemigo )
+        # Actualizar explosiones
+        explosiones = [ explosion for explosion in explosiones if explosion.actualizar ( ) ]
+        # Cambiar el fondo cada 250 puntos
+        if puntos > 0 and puntos % 250 == 0 :
+            if fondo_actual == fondo2 :
+                fondo_actual = fondo3
+            else :
+                fondo_actual = fondo2
+            puntos += 10  # Aumenta puntos para evitar el cambio de fondo continuo
+        # Dibujar fondo y objetos en la pantalla
+        screen.blit ( fondo_actual , (0 , 0) )
+        personaje.dibujar ( screen )
+        for enemigo in enemigos :
+            enemigo.dibujar ( screen )
+        for explosion in explosiones :
+            explosion.dibujar ( screen )
 
-            if enemigo.rect.colliderect ( personaje.shape ) :
-                if not personaje.recibir_dano ( ) :
-                    running = False  # Terminar el juego si la energía llega a 0
 
-            # Generar enemigos aleatoriamente
-            if random.random ( ) < 0.02 :
-                x = random.randint ( 0 , SCREEN_WIDTH - 50 )  # Asegúrate de que el enemigo esté dentro de la pantalla
-                enemigo = Enemigo ( x , 0 )
-                enemigos.append ( enemigo )
+        # Mostrar marcador y nivel
+        font = pygame.font.Font ( None , 36 )
+        texto_puntos = font.render ( f"Puntos: {puntos}" , True , (255 , 255 , 255) )
+        texto_nivel = font.render ( f"Nivel: {nivel}" , True , (255 , 255 , 255) )
+        screen.blit ( texto_puntos , (10 , 50) )
+        screen.blit ( texto_nivel , (10 , 90) )
+
+        if puntos >= 250 :
+            nivel += 1
+            puntos = 0  # Resetea el puntaje al cambiar de nivel
+
+        pygame.display.flip ( )
+        clock.tick ( 60 )
+
+    # Mostrar mensaje de GAME OVER
+    screen.fill ( (0 , 0 , 0) )
+
+    # Definir fuente
+    font_large = pygame.font.Font ( None , 74 )
+    font_small = pygame.font.Font ( None , 36 )
+
+    # Renderizar textos
+    texto_game_over = font_large.render ( "GAME OVER" , True , (255 , 0 , 0) )
+    texto_mensaje = font_small.render ( "Que la Fuerza te acompañe" , True , (255 , 255 , 255) )
+
+    # Calcular posiciones para centrar el texto
+    pos_x_game_over = SCREEN_WIDTH // 2 - texto_game_over.get_width ( ) // 2
+    pos_y_game_over = SCREEN_HEIGHT // 2 - texto_game_over.get_height ( ) // 2 - 20  # Ajusta el margen vertical
+
+    pos_x_mensaje = SCREEN_WIDTH // 2 - texto_mensaje.get_width ( ) // 2
+    pos_y_mensaje = SCREEN_HEIGHT // 2 + texto_game_over.get_height ( ) // 2 + 20  # Ajusta el margen vertical
+
+    # Dibujar textos en la pantalla
+    screen.blit ( texto_game_over , (pos_x_game_over , pos_y_game_over) )
+    screen.blit ( texto_mensaje , (pos_x_mensaje , pos_y_mensaje) )
+
+    # Actualizar la pantalla
+    pygame.display.flip ( )
+    pygame.time.wait ( 2000 )  # Mostrar GAME OVER durante 2 segundos
+    pygame.quit ( )
+    sys.exit ( )
 
 
-            # Actualizar explosiones
-            explosiones = [ explosion for explosion in explosiones if explosion.actualizar ( ) ]
-
-
-            # Cambiar el fondo cada 250 puntos
-            if puntos > 0 and puntos % 250 == 0 :
-                if fondo_actual == fondo2 :
-                    fondo_actual = fondo3
-                else :
-                    fondo_actual = fondo2
-                puntos += 10  # Aumenta puntos para evitar el cambio de fondo continuo
-
-
-            # Dibujar fondo y objetos en la pantalla
-            screen.blit ( fondo_actual , (0 , 0) )
-            personaje.dibujar ( screen )
-            for enemigo in enemigos :
-                enemigo.dibujar ( screen )
-            for explosion in explosiones :
-                explosion.dibujar ( screen )
+if __name__ == '__main__' :
+    main ( )

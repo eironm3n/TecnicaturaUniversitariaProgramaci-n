@@ -32,9 +32,9 @@ class Personaje:
             laser.dibujar(screen)
             laser.mover()
 
-    # Dibujar la barra de energía
-    pygame.draw.rect(screen, (255, 0, 0), (10, 10, 100, 10))  # Barra de fondo
-    pygame.draw.rect(screen, (0, 255, 0), (10, 10, self.energia, 10))  # Barra de energía
+        # Dibujar la barra de energía
+        pygame.draw.rect(screen, (255, 0, 0), (10, 10, 100, 10))  # Barra de fondo
+        pygame.draw.rect(screen, (0, 255, 0), (10, 10, self.energia, 10))  # Barra de energía
     
     class Enemigo:
         def __init__(self, x, y):
