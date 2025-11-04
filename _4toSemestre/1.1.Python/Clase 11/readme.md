@@ -11,8 +11,10 @@ Es un archivo de texto que lista todas las dependencias externas de un proyecto 
 
 Dentro de tu entorno virtual activado, puedes generar este archivo automáticamente con el siguiente comando:
 
-```pip3 freeze > requirements.txt```
-```pip3 freeze: Lista todos los paquetes instalados en el entorno actual junto con sus versiones exactas.```
+```sh
+pip3 freeze > requirements.txt
+pip3 freeze: Lista todos los paquetes instalados en el entorno actual junto con sus versiones exactas.
+```
 
 
 >: Es un operador de redirección que envía la salida del comando anterior al archivo requirements.txt, creándolo o sobrescribiéndolo.
@@ -20,15 +22,15 @@ Dentro de tu entorno virtual activado, puedes generar este archivo automáticame
 3. Instalar Dependencias desde requirements.txt
 
 Cuando un nuevo colaborador se une al proyecto, no necesita instalar cada librería una por una. Simplemente ejecuta el siguiente comando, y pip se encargará de todo:
-code
-Bash
-pip3 install -r requirements.txt
+
+
+```pip3 install -r requirements.txt```
+
 La bandera -r le indica a pip que instale las dependencias listadas en el archivo especificado.
 4. Documentar los Pasos en README.md
 Es una buena práctica documentar en el archivo README.md los comandos necesarios para que un nuevo colaborador pueda poner en marcha el proyecto.
-code
-Markdown
-# Mi Proyecto de Python
+
+## *Mi Proyecto de Python
 
 Este proyecto consume una API para mostrar información sobre razas de perros.
 
