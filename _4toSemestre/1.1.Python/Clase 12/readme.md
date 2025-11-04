@@ -1,40 +1,116 @@
-# Entorno Profesional en Python - Parte 7
 
-## Análisis de Datos y Visualización con Gráficos
+Claro, aquí tienes la transcripción completa y contextualizada de la clase, combinando la información del resumen y los videos en un formato de texto paso a paso, ideal para el estudio.
+Entorno Profesional en Python - Parte 7
+En esta séptima parte de nuestro curso sobre el entorno profesional en Python, vamos a dar un paso fundamental: pasar de analizar datos y ejecutar scripts a construir y desplegar un servicio web completo. Combinaremos nuestro conocimiento de Python y Pandas con herramientas de backend como FastAPI y finalmente lo empaquetaremos todo en un contenedor de Docker para asegurar que sea portable y escalable.
+Parte 1: Resumen del Trabajo Previo - Análisis y Visualización
+Antes de adentrarnos en el backend, recordemos lo que hemos logrado hasta ahora. En la primera sección de este módulo, nuestro objetivo fue leer, procesar y visualizar datos de un archivo CSV sobre la población mundial.
+Lectura y Filtrado de Datos: Utilizamos la librería Pandas para leer un archivo data.csv. Implementamos filtros para aislar datos específicos, como los países de un continente en particular (por ejemplo, África y Sudamérica).
+Generación de Gráficos: Con la ayuda de Matplotlib, creamos visualizaciones para entender mejor los datos:
+Gráficos de pastel (pie charts) para mostrar la distribución porcentual de la población entre los países de un continente.
+Gráficos de barras para visualizar la evolución de la población de un país a lo largo del tiempo.
+Uso de Librerías: Las herramientas clave fueron pandas para la manipulación de datos y matplotlib para la creación de las visualizaciones, demostrando un flujo de trabajo típico en el análisis de datos.
+Parte 2: Introducción a FastAPI - Construyendo Nuestro Servidor Web
+Ahora, vamos a construir nuestro propio servidor web. En lugar de solo consumir datos, crearemos una API que pueda servirlos. Para esto, utilizaremos FastAPI, un framework de Python moderno y de alto rendimiento.
+¿Qué son FastAPI y Uvicorn?
+FastAPI: Es un framework web para construir APIs con Python. Es extremadamente rápido, fácil de usar y genera automáticamente documentación interactiva para tus endpoints, lo cual es increíblemente útil para el desarrollo.
+Uvicorn: Es un servidor ASGI (Asynchronous Server Gateway Interface) de alto rendimiento. FastAPI necesita un servidor como Uvicorn para ejecutar la aplicación y manejar las peticiones de manera asíncrona, lo que lo hace muy eficiente.
+Paso a Paso - Creando el Servidor:
+Instalación de Dependencias:
+Primero, activamos nuestro entorno virtual y procedemos a instalar las librerías necesarias.
+code
+Bash
+# Instalar FastAPI
+pip3 install fastapi
 
-En esta sección, el objetivo fue leer, procesar y visualizar datos de un archivo CSV que contiene información sobre la población mundial.
-* Lectura y Filtrado de Datos: 
-Se utilizó Python para leer un archivo data.csv. Se implementaron filtros para aislar datos específicos, como los países pertenecientes a un continente en particular (África y Sudamérica).
-* Generación de Gráficos:
-    * Se crearon gráficos de pastel (pie charts) para mostrar la distribución porcentual de la población entre los países de un continente.
-    * Se generaron gráficos de barras para visualizar la evolución de la población de un país específico a lo largo del tiempo.
+# Instalar Uvicorn con soporte estándar para un mejor rendimiento
+pip3 install "uvicorn[standard]"
+Creación del requirements.txt:
+Una vez instaladas, es una buena práctica profesional congelar las dependencias en un archivo requirements.txt. Esto asegura que cualquier otro entorno (incluido nuestro futuro contenedor Docker) pueda replicar exactamente las mismas versiones de las librerías.
+code
+Bash
+pip3 freeze > requirements.txt
+Escribiendo nuestra primera API con main.py:
+Creamos un archivo main.py en nuestro directorio web-server y escribimos el código para nuestra API.
+code
+Python
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 
-* Resolución de Errores: 
-Durante el proceso, se solucionó un error en el código que impedía la correcta generación de los gráficos. El problema se resolvió reubicando la línea de código ```charts.generate_pie_chart()``` para que se ejecutara en el momento adecuado.
+# Creamos nuestra primera instancia de FastAPI
+app = FastAPI()
 
-* Uso de Librerías: 
-Para estas tareas se utilizaron librerías como pandas para la manipulación de datos y matplotlib para la creación de las visualizaciones.
+# Primera ruta o endpoint principal
+# El decorador @app.get indica que esta función maneja peticiones GET a la raíz ('/')
+@app.get('/')
+def get_list():
+    # FastAPI convierte automáticamente listas y diccionarios a formato JSON
+    return [1, 2, 3]
 
-## Python para Backend: Web Server con FastAPI
-Se avanza con Python para el backend, construyendo un servidor web propio utilizando el ecosistema de Python.
+# Segunda ruta para devolver un diccionario
+@app.get('/contact')
+def get_contact():
+    return {'name': 'UTN'}
+Ejecutando el Servidor Localmente:
+Para probar que nuestro servidor funciona, lo lanzamos desde la terminal con Uvicorn.
+code
+Bash
+# uvicorn main:app --reload
+main: Se refiere al archivo main.py.
+app: Se refiere a la instancia app = FastAPI() que creamos dentro del archivo.
+--reload: Este flag es muy útil durante el desarrollo, ya que reinicia el servidor automáticamente cada vez que detecta un cambio en el código.
+Al ejecutar esto, podrás acceder desde tu navegador a http://127.0.0.1:8000 y verás [1,2,3]. Si vas a http://127.0.0.1:8000/contact, verás {"name":"UTN"}.
+Parte 3: Dockerización de Nuestro Web Server
+El siguiente paso es empaquetar nuestra aplicación FastAPI en un contenedor Docker. Esto nos dará un entorno aislado y portable, listo para ser desplegado en cualquier lugar.
+1. Configuración del Entorno Docker:
+Asegúrate de tener Docker Desktop funcionando correctamente. Si estás en Windows, es fundamental activar la integración con WSL 2 (Windows Subsystem for Linux) en la configuración de Docker Desktop. Además, si encuentras problemas de permisos al conectar con el daemon de Docker, recuerda ejecutar los comandos con sudo.
+2. Preparando los Archivos para Docker:
+Para este proceso, vamos a reutilizar y adaptar la configuración que ya teníamos de un proyecto anterior. Esta es una técnica muy común en el desarrollo profesional: no reinventar la rueda.
+Copia de archivos: Copiamos Dockerfile y docker-compose.yml de nuestro proyecto anterior (app) a nuestro nuevo proyecto web-server.
+Modificando el Dockerfile:
+Este archivo define la "receta" para construir nuestra imagen de contenedor.
+code
+Dockerfile
+# Usamos la imagen oficial de Python 3.10.12 como base
+FROM python:3.10.12
 
-* Herramientas Utilizadas:
-    * FastAPI: Un framework de Python para crear aplicaciones web y APIs de forma rápida y segura. Se destaca por su alto rendimiento y su capacidad para generar documentación automática.
-    * Uvicorn: Un servidor ASGI (Asynchronous Server Gateway Interface) de alto rendimiento, utilizado para ejecutar aplicaciones como las creadas con FastAPI.
-* Proceso:
-    1. Se instala FastAPI y Uvicorn.
-    2. Se crea una instancia de la aplicación FastAPI.
-Se definen las rutas (endpoints) de la API usando decoradores. Por ejemplo, una ruta principal (/) y una ruta de contacto (/contact).
-Cada ruta devuelve una respuesta, que puede ser una lista, un diccionario (JSON) o incluso contenido HTML.
-Se utiliza HTMLResponse para devolver páginas web dinámicas.
-El servidor se ejecuta con Uvicorn, que recarga automáticamente los cambios en el código (--reload), facilitando el desarrollo.
-Dockerización de Aplicaciones Python
-El enfoque fue empaquetar las aplicaciones de Python en contenedores de Docker, creando entornos aislados y portables. Esto permite ejecutar aplicaciones con scripts y también dockerizar un servidor web.
-Configuración del Entorno Docker:
-Se solucionó un error inicial activando la integración de Docker con WSL 2 (Windows Subsystem for Linux) en la configuración de Docker Desktop.
-Se corrigió un problema de permisos que impedía la conexión con el Docker daemon, ejecutando los comandos con sudo.
-Creación de Archivos Docker:
-Dockerfile: Se definió la imagen del contenedor, especificando la versión de Python (ej. FROM python:3.10), el directorio de trabajo (WORKDIR /app), la copia de los archivos necesarios (COPY), y la instalación de las dependencias (RUN pip install -r requirements.txt).
-docker-compose.yml: Se orquestó el servicio, indicando cómo construir la imagen a partir del Dockerfile y mapeando los puertos (ej. 80:80) para que el servidor web sea accesible.
-Automatización y Desarrollo: Se utilizó la vinculación de archivos (volúmenes) para que los cambios en el código local se reflejen en tiempo real dentro del contenedor. Este truco mejora la experiencia de desarrollo, ya que no es necesario reconstruir la imagen con cada cambio.
-Ejecución del Contenedor: Se construyó y ejecutó el contenedor con los comandos docker-compose build y docker-compose up -d. Finalmente, se verificó que el servicio web estaba activo y respondiendo a las peticiones en localhost
+# Establecemos el directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copiamos el archivo de dependencias
+COPY requirements.txt /app/requirements.txt
+
+# Instalamos las dependencias
+RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
+
+# Copiamos todo el contenido del proyecto al directorio de trabajo
+COPY . /app
+
+# Comando que se ejecutará al iniciar el contenedor
+# Lanza el servidor Uvicorn, haciéndolo accesible desde fuera del contenedor
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+Modificando el docker-compose.yml:
+Este archivo nos ayuda a orquestar y gestionar nuestro servicio.
+code
+Yaml
+services:
+  web-server: # Cambiamos el nombre del servicio para que sea más descriptivo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80" # Mapeamos el puerto 80 del host al puerto 80 del contenedor
+    volumes:
+      - ./:/app # Sincronizamos el directorio local con el del contenedor
+3. El Truco de los Volúmenes para un Desarrollo Eficiente:
+La línea volumes: - ./:/app es un truco fundamental para el día a día con Docker. En lugar de tener que reconstruir la imagen (docker-compose build) cada vez que hacemos un cambio en nuestro código, este "volumen" enlaza nuestro directorio local con el directorio dentro del contenedor. De esta forma, cualquier cambio que guardemos en nuestro main.py se reflejará en tiempo real en la aplicación que se está ejecutando dentro del contenedor.
+4. Construcción y Ejecución del Contenedor:
+Finalmente, desde la terminal, dentro del directorio web-server, ejecutamos los siguientes comandos:
+code
+Bash
+# Construye la imagen del contenedor según lo definido en docker-compose.yml
+docker-compose build
+
+# Levanta el servicio en segundo plano (detached mode)
+docker-compose up -d
+Si todo sale bien, ahora podrás acceder a http://localhost/ o http://localhost/contact en tu navegador y verás tu API funcionando, ¡ahora desde dentro de un contenedor Docker!
+Con esto, hemos completado un ciclo de desarrollo profesional: desde la creación de una aplicación web funcional con FastAPI hasta su encapsulación en un contenedor Docker, dejándola lista para su despliegue en cualquier entorno compatible.
