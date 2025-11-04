@@ -1,30 +1,36 @@
 
-Claro, aquí tienes la transcripción completa y contextualizada de la clase, combinando la información del resumen y los videos en un formato de texto paso a paso, ideal para el estudio.
-Entorno Profesional en Python - Parte 7
-En esta séptima parte de nuestro curso sobre el entorno profesional en Python, vamos a dar un paso fundamental: pasar de analizar datos y ejecutar scripts a construir y desplegar un servicio web completo. Combinaremos nuestro conocimiento de Python y Pandas con herramientas de backend como FastAPI y finalmente lo empaquetaremos todo en un contenedor de Docker para asegurar que sea portable y escalable.
-Parte 1: Resumen del Trabajo Previo - Análisis y Visualización
+# **Entorno Profesional en Python - Parte 7**
+En esta séptima parte de nuestro curso sobre el entorno profesional en Python, vamos a dar un paso fundamental: pasar de analizar datos y ejecutar scripts a construir y desplegar un servicio web completo. Combinaremos nuestro conocimiento de Python y Pandas con herramientas de backend como **FastAPI** y finalmente lo empaquetaremos todo en un contenedor de **Docker** para asegurar que sea portable y escalable.
+
+## **Parte 1: Resumen del Trabajo Previo - Análisis y Visualización**
 Antes de adentrarnos en el backend, recordemos lo que hemos logrado hasta ahora. En la primera sección de este módulo, nuestro objetivo fue leer, procesar y visualizar datos de un archivo CSV sobre la población mundial.
-Lectura y Filtrado de Datos: Utilizamos la librería Pandas para leer un archivo data.csv. Implementamos filtros para aislar datos específicos, como los países de un continente en particular (por ejemplo, África y Sudamérica).
-Generación de Gráficos: Con la ayuda de Matplotlib, creamos visualizaciones para entender mejor los datos:
-Gráficos de pastel (pie charts) para mostrar la distribución porcentual de la población entre los países de un continente.
-Gráficos de barras para visualizar la evolución de la población de un país a lo largo del tiempo.
-Uso de Librerías: Las herramientas clave fueron pandas para la manipulación de datos y matplotlib para la creación de las visualizaciones, demostrando un flujo de trabajo típico en el análisis de datos.
-Parte 2: Introducción a FastAPI - Construyendo Nuestro Servidor Web
+
+* **Lectura y Filtrado de Datos:** Utilizamos la librería **Pandas** para leer un archivo data.csv. Implementamos filtros para aislar datos específicos, como los países de un continente en particular (por ejemplo, África y Sudamérica).
+
+* **Generación de Gráficos:** Con la ayuda de **Matplotlib**, creamos visualizaciones para entender mejor los datos:
+    * **Gráficos de pastel (pie charts)** para mostrar la distribución porcentual de la población entre los países de un continente.
+    * **Gráficos de barras** para visualizar la evolución de la población de un país a lo largo del tiempo.
+* **Uso de Librerías:** Las herramientas clave fueron pandas para la manipulación de datos y matplotlib para la creación de las visualizaciones, demostrando un flujo de trabajo típico en el análisis de datos.
+
+## **Parte 2: Introducción a FastAPI - Construyendo Nuestro Servidor Web**
 Ahora, vamos a construir nuestro propio servidor web. En lugar de solo consumir datos, crearemos una API que pueda servirlos. Para esto, utilizaremos FastAPI, un framework de Python moderno y de alto rendimiento.
-¿Qué son FastAPI y Uvicorn?
-FastAPI: Es un framework web para construir APIs con Python. Es extremadamente rápido, fácil de usar y genera automáticamente documentación interactiva para tus endpoints, lo cual es increíblemente útil para el desarrollo.
-Uvicorn: Es un servidor ASGI (Asynchronous Server Gateway Interface) de alto rendimiento. FastAPI necesita un servidor como Uvicorn para ejecutar la aplicación y manejar las peticiones de manera asíncrona, lo que lo hace muy eficiente.
-Paso a Paso - Creando el Servidor:
-Instalación de Dependencias:
+
+### **¿Qué son FastAPI y Uvicorn?**
+* **FastAPI:** Es un framework web para construir APIs con Python. Es extremadamente rápido, fácil de usar y genera automáticamente documentación interactiva para tus endpoints, lo cual es increíblemente útil para el desarrollo.
+* **Uvicorn:** Es un servidor ASGI (Asynchronous Server Gateway Interface) de alto rendimiento. FastAPI necesita un servidor como Uvicorn para ejecutar la aplicación y manejar las peticiones de manera asíncrona, lo que lo hace muy eficiente.
+
+### **Paso a Paso - Creando el Servidor:**
+1. **Instalación de Dependencias:**
 Primero, activamos nuestro entorno virtual y procedemos a instalar las librerías necesarias.
-code
-Bash
+```sh
 # Instalar FastAPI
 pip3 install fastapi
 
 # Instalar Uvicorn con soporte estándar para un mejor rendimiento
 pip3 install "uvicorn[standard]"
-Creación del requirements.txt:
+```
+
+2. **Creación del ```requirements.txt:```**
 Una vez instaladas, es una buena práctica profesional congelar las dependencias en un archivo requirements.txt. Esto asegura que cualquier otro entorno (incluido nuestro futuro contenedor Docker) pueda replicar exactamente las mismas versiones de las librerías.
 code
 Bash
