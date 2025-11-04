@@ -6,8 +6,8 @@ En esta sección, el objetivo fue leer, procesar y visualizar datos de un archiv
 * Lectura y Filtrado de Datos: 
 Se utilizó Python para leer un archivo data.csv. Se implementaron filtros para aislar datos específicos, como los países pertenecientes a un continente en particular (África y Sudamérica).
 * Generación de Gráficos:
-* - Se crearon gráficos de pastel (pie charts) para mostrar la distribución porcentual de la población entre los países de un continente.
-* - Se generaron gráficos de barras para visualizar la evolución de la población de un país específico a lo largo del tiempo.
+    * Se crearon gráficos de pastel (pie charts) para mostrar la distribución porcentual de la población entre los países de un continente.
+    * Se generaron gráficos de barras para visualizar la evolución de la población de un país específico a lo largo del tiempo.
 
 * Resolución de Errores: 
 Durante el proceso, se solucionó un error en el código que impedía la correcta generación de los gráficos. El problema se resolvió reubicando la línea de código ```charts.generate_pie_chart()``` para que se ejecutara en el momento adecuado.
@@ -20,10 +20,10 @@ Se avanza con Python para el backend, construyendo un servidor web propio utiliz
 
 * Herramientas Utilizadas:
     * FastAPI: Un framework de Python para crear aplicaciones web y APIs de forma rápida y segura. Se destaca por su alto rendimiento y su capacidad para generar documentación automática.
-* - Uvicorn: Un servidor ASGI (Asynchronous Server Gateway Interface) de alto rendimiento, utilizado para ejecutar aplicaciones como las creadas con FastAPI.
+    * Uvicorn: Un servidor ASGI (Asynchronous Server Gateway Interface) de alto rendimiento, utilizado para ejecutar aplicaciones como las creadas con FastAPI.
 * Proceso:
-* 1. Se instala FastAPI y Uvicorn.
-* 2. Se crea una instancia de la aplicación FastAPI.
+    1. Se instala FastAPI y Uvicorn.
+    2. Se crea una instancia de la aplicación FastAPI.
 Se definen las rutas (endpoints) de la API usando decoradores. Por ejemplo, una ruta principal (/) y una ruta de contacto (/contact).
 Cada ruta devuelve una respuesta, que puede ser una lista, un diccionario (JSON) o incluso contenido HTML.
 Se utiliza HTMLResponse para devolver páginas web dinámicas.
