@@ -62,14 +62,17 @@ Al ejecutar esto, podrás acceder desde tu navegador a http://127.0.0.1:8000 y v
 Parte 3: Dockerización de Nuestro Web Server
 El siguiente paso es empaquetar nuestra aplicación FastAPI en un contenedor Docker. Esto nos dará un entorno aislado y portable, listo para ser desplegado en cualquier lugar.
 1. Configuración del Entorno Docker:
-Asegúrate de tener Docker Desktop funcionando correctamente. Si estás en Windows, es fundamental activar la integración con WSL 2 (Windows Subsystem for Linux) en la configuración de Docker Desktop. Además, si encuentras problemas de permisos al conectar con el daemon de Docker, recuerda ejecutar los comandos con sudo.
+Asegúrate de tener Docker Desktop funcionando correctamente. Si estás en Windows, es fundamental activar la integración con WSL 2 (Windows Subsystem for Linux) en la configuración de Docker Desktop. Además, si encuentras problemas de permisos al conectar con el daemon de Docker, recuerda ejecutar los comandos con ```sudo```.
+
 2. Preparando los Archivos para Docker:
 Para este proceso, vamos a reutilizar y adaptar la configuración que ya teníamos de un proyecto anterior. Esta es una técnica muy común en el desarrollo profesional: no reinventar la rueda.
-Copia de archivos: Copiamos Dockerfile y docker-compose.yml de nuestro proyecto anterior (app) a nuestro nuevo proyecto web-server.
-Modificando el Dockerfile:
+
+* Copia de archivos: Copiamos Dockerfile y docker-compose.yml de nuestro proyecto anterior (app) a nuestro nuevo proyecto web-server.
+
+* Modificando el Dockerfile:
 Este archivo define la "receta" para construir nuestra imagen de contenedor.
-code
-Dockerfile
+
+```sh
 # Usamos la imagen oficial de Python 3.10.12 como base
 FROM python:3.10.12
 
@@ -88,10 +91,12 @@ COPY . /app
 # Comando que se ejecutará al iniciar el contenedor
 # Lanza el servidor Uvicorn, haciéndolo accesible desde fuera del contenedor
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
-Modificando el docker-compose.yml:
+```
+
+* Modificando el ```docker-compose.yml```:
 Este archivo nos ayuda a orquestar y gestionar nuestro servicio.
-code
-Yaml
+
+```sh
 services:
   web-server: # Cambiamos el nombre del servicio para que sea más descriptivo
     build:
@@ -101,16 +106,21 @@ services:
       - "80:80" # Mapeamos el puerto 80 del host al puerto 80 del contenedor
     volumes:
       - ./:/app # Sincronizamos el directorio local con el del contenedor
+```
+
 3. El Truco de los Volúmenes para un Desarrollo Eficiente:
 La línea volumes: - ./:/app es un truco fundamental para el día a día con Docker. En lugar de tener que reconstruir la imagen (docker-compose build) cada vez que hacemos un cambio en nuestro código, este "volumen" enlaza nuestro directorio local con el directorio dentro del contenedor. De esta forma, cualquier cambio que guardemos en nuestro main.py se reflejará en tiempo real en la aplicación que se está ejecutando dentro del contenedor.
+
 4. Construcción y Ejecución del Contenedor:
 Finalmente, desde la terminal, dentro del directorio web-server, ejecutamos los siguientes comandos:
-code
-Bash
+```sh
 # Construye la imagen del contenedor según lo definido en docker-compose.yml
 docker-compose build
 
 # Levanta el servicio en segundo plano (detached mode)
 docker-compose up -d
-Si todo sale bien, ahora podrás acceder a http://localhost/ o http://localhost/contact en tu navegador y verás tu API funcionando, ¡ahora desde dentro de un contenedor Docker!
+```
+
+Si todo sale bien, ahora podrás acceder a ```http://localhost/``` o ```http://localhost/contact``` en tu navegador y verás tu API funcionando, ¡ahora desde dentro de un contenedor Docker!
+
 Con esto, hemos completado un ciclo de desarrollo profesional: desde la creación de una aplicación web funcional con FastAPI hasta su encapsulación en un contenedor Docker, dejándola lista para su despliegue en cualquier entorno compatible.
