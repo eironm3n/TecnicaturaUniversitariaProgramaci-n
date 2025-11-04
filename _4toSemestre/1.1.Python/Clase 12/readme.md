@@ -31,14 +31,15 @@ pip3 install "uvicorn[standard]"
 ```
 
 2. **Creación del ```requirements.txt:```**
+
 Una vez instaladas, es una buena práctica profesional congelar las dependencias en un archivo requirements.txt. Esto asegura que cualquier otro entorno (incluido nuestro futuro contenedor Docker) pueda replicar exactamente las mismas versiones de las librerías.
-code
-Bash
-pip3 freeze > requirements.txt
-Escribiendo nuestra primera API con main.py:
+
+```pip3 freeze > requirements.txt```
+
+3. **Escribiendo nuestra primera API con ```main.py```:**
 Creamos un archivo main.py en nuestro directorio web-server y escribimos el código para nuestra API.
-code
-Python
+
+```sh
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
@@ -56,19 +57,24 @@ def get_list():
 @app.get('/contact')
 def get_contact():
     return {'name': 'UTN'}
-Ejecutando el Servidor Localmente:
+```
+
+4. **Ejecutando el Servidor Localmente:**
+
 Para probar que nuestro servidor funciona, lo lanzamos desde la terminal con Uvicorn.
-code
-Bash
-# uvicorn main:app --reload
-main: Se refiere al archivo main.py.
-app: Se refiere a la instancia app = FastAPI() que creamos dentro del archivo.
---reload: Este flag es muy útil durante el desarrollo, ya que reinicia el servidor automáticamente cada vez que detecta un cambio en el código.
+```# uvicorn main:app --reload```
+
+    * main: Se refiere al archivo main.py.
+    * app: Se refiere a la instancia app = FastAPI() que creamos dentro del archivo.
+    * --reload: Este flag es muy útil durante el desarrollo, ya que reinicia el servidor automáticamente cada vez que detecta un cambio en el código.
+
 Al ejecutar esto, podrás acceder desde tu navegador a http://127.0.0.1:8000 y verás [1,2,3]. Si vas a http://127.0.0.1:8000/contact, verás {"name":"UTN"}.
-Parte 3: Dockerización de Nuestro Web Server
+
+## **Parte 3: Dockerización de Nuestro Web Server**
 El siguiente paso es empaquetar nuestra aplicación FastAPI en un contenedor Docker. Esto nos dará un entorno aislado y portable, listo para ser desplegado en cualquier lugar.
-1. Configuración del Entorno Docker:
-Asegúrate de tener Docker Desktop funcionando correctamente. Si estás en Windows, es fundamental activar la integración con WSL 2 (Windows Subsystem for Linux) en la configuración de Docker Desktop. Además, si encuentras problemas de permisos al conectar con el daemon de Docker, recuerda ejecutar los comandos con ```sudo```.
+
+1. **Configuración del Entorno Docker:**
+Asegúrate de tener Docker Desktop funcionando correctamente. Si estás en Windows, es fundamental activar la integración con **WSL 2 (Windows Subsystem for Linux)** en la configuración de Docker Desktop. Además, si encuentras problemas de permisos al conectar con el daemon de Docker, recuerda ejecutar los comandos con ```sudo```.
 
 2. Preparando los Archivos para Docker:
 Para este proceso, vamos a reutilizar y adaptar la configuración que ya teníamos de un proyecto anterior. Esta es una técnica muy común en el desarrollo profesional: no reinventar la rueda.
