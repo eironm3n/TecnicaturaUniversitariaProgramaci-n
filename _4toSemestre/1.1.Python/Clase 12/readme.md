@@ -76,12 +76,12 @@ El siguiente paso es empaquetar nuestra aplicación FastAPI en un contenedor Doc
 1. **Configuración del Entorno Docker:**
 Asegúrate de tener Docker Desktop funcionando correctamente. Si estás en Windows, es fundamental activar la integración con **WSL 2 (Windows Subsystem for Linux)** en la configuración de Docker Desktop. Además, si encuentras problemas de permisos al conectar con el daemon de Docker, recuerda ejecutar los comandos con ```sudo```.
 
-2. Preparando los Archivos para Docker:
+2. **Preparando los Archivos para Docker:**
 Para este proceso, vamos a reutilizar y adaptar la configuración que ya teníamos de un proyecto anterior. Esta es una técnica muy común en el desarrollo profesional: no reinventar la rueda.
 
-* Copia de archivos: Copiamos Dockerfile y docker-compose.yml de nuestro proyecto anterior (app) a nuestro nuevo proyecto web-server.
+* **Copia de archivos:** Copiamos ```Dockerfile``` y ```docker-compose.yml``` de nuestro proyecto anterior (app) a nuestro nuevo proyecto web-server.
 
-* Modificando el Dockerfile:
+* **Modificando el ```Dockerfile```**:
 Este archivo define la "receta" para construir nuestra imagen de contenedor.
 
 ```sh
@@ -105,7 +105,7 @@ COPY . /app
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
 ```
 
-* Modificando el ```docker-compose.yml```:
+* **Modificando el ```docker-compose.yml```:**
 Este archivo nos ayuda a orquestar y gestionar nuestro servicio.
 
 ```sh
@@ -120,10 +120,10 @@ services:
       - ./:/app # Sincronizamos el directorio local con el del contenedor
 ```
 
-3. El Truco de los Volúmenes para un Desarrollo Eficiente:
+3. **El Truco de los Volúmenes para un Desarrollo Eficiente:**
 La línea volumes: - ./:/app es un truco fundamental para el día a día con Docker. En lugar de tener que reconstruir la imagen (docker-compose build) cada vez que hacemos un cambio en nuestro código, este "volumen" enlaza nuestro directorio local con el directorio dentro del contenedor. De esta forma, cualquier cambio que guardemos en nuestro main.py se reflejará en tiempo real en la aplicación que se está ejecutando dentro del contenedor.
 
-4. Construcción y Ejecución del Contenedor:
+4. **Construcción y Ejecución del Contenedor:**
 Finalmente, desde la terminal, dentro del directorio web-server, ejecutamos los siguientes comandos:
 ```sh
 # Construye la imagen del contenedor según lo definido en docker-compose.yml
