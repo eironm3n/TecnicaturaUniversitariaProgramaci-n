@@ -19,7 +19,7 @@ Para estas tareas se utilizaron librerías como pandas para la manipulación de 
 Se avanza con Python para el backend, construyendo un servidor web propio utilizando el ecosistema de Python.
 
 * Herramientas Utilizadas:
- - FastAPI: Un framework de Python para crear aplicaciones web y APIs de forma rápida y segura. Se destaca por su alto rendimiento y su capacidad para generar documentación automática.
+*    FastAPI: Un framework de Python para crear aplicaciones web y APIs de forma rápida y segura. Se destaca por su alto rendimiento y su capacidad para generar documentación automática.
 * - Uvicorn: Un servidor ASGI (Asynchronous Server Gateway Interface) de alto rendimiento, utilizado para ejecutar aplicaciones como las creadas con FastAPI.
 * Proceso:
 * 1. Se instala FastAPI y Uvicorn.
