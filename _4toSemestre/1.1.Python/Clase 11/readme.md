@@ -4,15 +4,22 @@ En esta clase, exploramos la manera profesional de gestionar las dependencias de
 Manejo de Dependencias con requirements.txt
 Para que un proyecto sea profesional y colaborativo, es fundamental que cualquier desarrollador pueda replicar el entorno de trabajo, instalando exactamente las mismas librerías y versiones que se usaron originalmente.
 1. ¿Qué es requirements.txt?
+
 Es un archivo de texto que lista todas las dependencias externas de un proyecto de Python. Permite automatizar la instalación de estas librerías, asegurando que todos los miembros del equipo trabajen con las mismas versiones.
+
 2. Generar el archivo requirements.txt
+
 Dentro de tu entorno virtual activado, puedes generar este archivo automáticamente con el siguiente comando:
+
 code
 Bash
 pip3 freeze > requirements.txt
 pip3 freeze: Lista todos los paquetes instalados en el entorno actual junto con sus versiones exactas.
+
 >: Es un operador de redirección que envía la salida del comando anterior al archivo requirements.txt, creándolo o sobrescribiéndolo.
+
 3. Instalar Dependencias desde requirements.txt
+
 Cuando un nuevo colaborador se une al proyecto, no necesita instalar cada librería una por una. Simplemente ejecuta el siguiente comando, y pip se encargará de todo:
 code
 Bash
