@@ -30,7 +30,7 @@ La bandera -r le indica a pip que instale las dependencias listadas en el archiv
 4. Documentar los Pasos en README.md
 Es una buena práctica documentar en el archivo README.md los comandos necesarios para que un nuevo colaborador pueda poner en marcha el proyecto.
 
-## *Mi Proyecto de Python
+## Mi Proyecto de Python
 
 Este proyecto consume una API para mostrar información sobre razas de perros.
 
@@ -74,8 +74,8 @@ Consumo de una API con requests
 Para interactuar con servicios web y obtener datos, utilizamos la librería requests, una de las más populares en Python para hacer peticiones HTTP.
 1. Realizando una Petición GET
 El siguiente script muestra cómo hacer una petición GET a la Dog CEO API para obtener una lista de razas de perros.
-code
-Python
+
+```sh
 # main.py
 import requests
 
@@ -99,15 +99,21 @@ def get_razas():
 
 # Ejecutamos la función
 get_razas()
+```
+
 2. Comprendiendo la Respuesta JSON
+
 Al inspeccionar la respuesta de la API, notamos que no es un texto plano, sino una estructura de datos.
-r.text: Devuelve el contenido de la respuesta como una cadena de texto (string).
-r.json(): Parsea la respuesta (que se espera esté en formato JSON) y la convierte en un objeto de Python, generalmente un diccionario o una lista.
+* r.text: Devuelve el contenido de la respuesta como una cadena de texto (string).
+* r.json(): Parsea la respuesta (que se espera esté en formato JSON) y la convierte en un objeto de Python, generalmente un diccionario o una lista.
+
 En nuestro caso, la respuesta es un diccionario. Para acceder a la lista de razas, necesitamos iterar sobre los valores del diccionario con el método .values().
-code
-Python
+
+```sh
 # Iteramos sobre los valores del diccionario obtenido del JSON
 for raza in razas.values():
     # Utilizamos la función para los valores
     print(f"Raza de los perritos: {raza}")
+```
+
 Al ejecutar el script (python3 main.py), la salida nos muestra un código 200 y luego la lista de razas, demostrando que la conexión y el procesamiento de datos fueron exitosos.
