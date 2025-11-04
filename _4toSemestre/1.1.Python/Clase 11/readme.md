@@ -11,10 +11,9 @@ Es un archivo de texto que lista todas las dependencias externas de un proyecto 
 
 Dentro de tu entorno virtual activado, puedes generar este archivo automáticamente con el siguiente comando:
 
-``code``
-Bash
-pip3 freeze > requirements.txt
-pip3 freeze: Lista todos los paquetes instalados en el entorno actual junto con sus versiones exactas.
+```pip3 freeze > requirements.txt```
+```pip3 freeze: Lista todos los paquetes instalados en el entorno actual junto con sus versiones exactas.```
+
 
 >: Es un operador de redirección que envía la salida del comando anterior al archivo requirements.txt, creándolo o sobrescribiéndolo.
 
